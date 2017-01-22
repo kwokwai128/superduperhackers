@@ -82,18 +82,24 @@
 	</xs:simpleType>
 	<xs:simpleType name="soundResource">
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="cheering.wav"/>
 			<xs:enumeration value="test"/>
 			<xs:enumeration value="new sound for this"/>
 			<xs:enumeration value="talksoundfemale.wav"/>
+			<xs:enumeration value="///////////"/>
 			<xs:enumeration value="intense.wav"/>
 			<xs:enumeration value="talksoundmale.wav"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="characterType">
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="Moderator"/>
+			<xs:enumeration value="Alice"/>
+			<xs:enumeration value="Betty"/>
 			<xs:enumeration value="Librarian"/>
 			<xs:enumeration value="Detective"/>
 			<xs:enumeration value="Buddy"/>
+			<xs:enumeration value="Distant"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="resourceType">
@@ -132,6 +138,7 @@
 			<xs:enumeration value="talksoundmale.wav"/>
 			<xs:enumeration value="many50"/>
 			<xs:enumeration value="many80000"/>
+			<xs:enumeration value="cheering.wav"/>
 			<xs:enumeration value="many10"/>
 			<xs:enumeration value="test4.png"/>
 			<xs:enumeration value="soundTest"/>
@@ -139,6 +146,7 @@
 			<xs:enumeration value="many70000"/>
 			<xs:enumeration value="many8000"/>
 			<xs:enumeration value="many4000"/>
+			<xs:enumeration value="///////////"/>
 			<xs:enumeration value="many60"/>
 			<xs:enumeration value="many20"/>
 			<xs:enumeration value="talksoundfemale.wav"/>
