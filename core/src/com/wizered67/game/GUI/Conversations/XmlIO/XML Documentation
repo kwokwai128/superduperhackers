@@ -106,6 +106,8 @@ LANGUAGE is the scripting language being used and ISFILE determines whether a fi
 <bg id="background">
 BackgroundSetCommand that sets the scene's background to the image with identifier ID.
 
+<changeconv conv="string"/>
+ChangeConversationCommand that sets the new conversation to conv.
 
 
 

@@ -1,0 +1,7 @@
+<conversation xmlns="urn:conversations">
+    <branch name="default">
+        Detective: Hello! You've entered... Conversation Two!!!!
+        : Okay go back now!
+        <changeconv conv="demonstration.conv"/>
+    </branch>
+</conversation>

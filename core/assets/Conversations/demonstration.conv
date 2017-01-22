@@ -99,6 +99,7 @@
         Detective: (His story's getting phonier by the minute. Now I've just got to break through
         his lies once and for all!)
         <visible id="Librarian" visible="false" fade="1.5"/>
+        <changeconv conv="two.conv"/>
     </branch>
 
 </conversation>

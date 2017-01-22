@@ -71,6 +71,7 @@
     <music>
         !crossexamination.mp3
         new music.mp3
+        !soundTest sound.mp3
     </music>
 
     <sounds>
