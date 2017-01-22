@@ -11,6 +11,7 @@
 
     <branch name="case2">
         <music id="discussion" loop="true"/>
+
         Betty: Thank you once again Wolf.
         <animation id="Betty" animation="Betty_betty_serious"/>
         Betty: The US does not have to police the world. It is shameful that other governments in NATO refuse to
@@ -111,8 +112,10 @@
     </branch>
 
     <branch name="press1">
+        <animation id="Alice" animation="Alice_mc_talk_normal" />
         Alice: America is the richest country in the entire world. Don’t you think we could spare a little for poorer
         nations?
+        <animation id="Betty" animation="Betty_betty_talk" />
         Betty: The American soldiers’ sole duty is to defend the citizens of the United States who pay their salaries
         and owe allegiance to the United States.
         <animation id="Betty" animation="Betty_betty_smug" />
@@ -123,6 +126,8 @@
     </branch>
 
     <branch name="press2">
+        <animation id="Alice" animation="Alice_mc_sweat" />
+        <animation id="Betty" animation="Betty_betty_talk" />
         Alice: What do you mean by return the favor?
         Betty: Exactly what it sounds like, Alice.
         Moderator: You don't mean...
@@ -139,6 +144,7 @@
     </branch>
 
     <branch name="press3">
+        <animation id="Alice" animation="Alice_mc_normal" />
         <animation id="Moderator" animation="Wolf_Wolf_looking" />
         Moderator: I'd love to go on an island vacation right now.
         <animation id="Betty" animation="Betty_betty_smug" />
@@ -156,6 +162,7 @@
     </branch>
 
     <branch name="press4">
+        <animation id="Betty" animation="Betty_betty_talk" />
         <animation id="Alice" animation="Alice_mc_sweat" />
         Alice: Wait, what does that mean!?
         Betty: You heard me right. This world needs more nukes.
@@ -185,6 +192,7 @@
 
     <branch name="right answer">
         <music id="cornered" loop="true"/>
+        <animation id="Alice" animation="Alice_mc_smug" />
         Alice: Ms. Blue, someone on your debate team is getting fired because of your deadly proposal @c{intense} unconstitutional!
         Moderator: What!? You mean we can't kill terrorists families?
         Alice: May I point your attention to the Eighth Amendment! No cruel and unusual punishments can be inflicted by the government!
@@ -204,9 +212,10 @@
         Betty: Technically it may be cruel and unusual, the CIA has continued to exercise these practices! There aren't any court cases or laws stating
         these actions are illegal!
         Alice: (You can't be serious...)
-        Moderator: Ms. Blue has a point but Ms. Alice you have made a serious note about Ms. Blue's plan. We will let the American people decide
+        Moderator: Ms. Blue has a point but Ms. Alice you have made a serious note about Ms. Blue's plan. We will let the American people decide.
         <pausemusic/>
         Alice: (Damn! I was close but I think I got brownie points for pointing out her plan could have flaws)
+        <animation id="Moderator" animation="Wolf_Wolf_looking" />
         Moderator: On to the next topic, domestic policies!)
         <changeconv conv="domestic.conv"/>
     </branch>
