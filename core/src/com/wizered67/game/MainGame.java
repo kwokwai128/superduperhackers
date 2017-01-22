@@ -22,8 +22,8 @@ public class MainGame extends Game {
 		assetManager = new Assets();
         musicManager = new MusicManager();
 		GameManager.init(this);
-		gameScreen = new MainGameScreen();
-        setScreen(new LoadingScreen(gameScreen));
+		//gameScreen = new MainGameScreen();
+        setScreen(new LoadingScreen());
 	}
 	
 }

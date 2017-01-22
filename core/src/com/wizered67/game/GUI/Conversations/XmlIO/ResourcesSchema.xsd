@@ -33,11 +33,19 @@
 	</xs:simpleType>
 	<xs:simpleType name="backgroundResource">
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="background"/>
 			<xs:enumeration value="testbackground.png"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="musicResource">
-		<xs:restriction base="xs:string"/>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BettyTheme"/>
+			<xs:enumeration value="victory"/>
+			<xs:enumeration value="cornered"/>
+			<xs:enumeration value="discussion"/>
+			<xs:enumeration value="logic"/>
+			<xs:enumeration value="suspense"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="soundResource">
 		<xs:restriction base="xs:string">
@@ -60,15 +68,22 @@
 	</xs:simpleType>
 	<xs:simpleType name="resourceType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Edgeworth"/>
-			<xs:enumeration value="cheering.wav"/>
 			<xs:enumeration value="Alice"/>
+			<xs:enumeration value="BettyTheme"/>
 			<xs:enumeration value="Betty"/>
-			<xs:enumeration value="talksoundfemale.wav"/>
-			<xs:enumeration value="Wolf"/>
+			<xs:enumeration value="victory"/>
+			<xs:enumeration value="discussion"/>
 			<xs:enumeration value="testbackground.png"/>
+			<xs:enumeration value="suspense"/>
 			<xs:enumeration value="intense.wav"/>
 			<xs:enumeration value="talksoundmale.wav"/>
+			<xs:enumeration value="Edgeworth"/>
+			<xs:enumeration value="cheering.wav"/>
+			<xs:enumeration value="background"/>
+			<xs:enumeration value="talksoundfemale.wav"/>
+			<xs:enumeration value="cornered"/>
+			<xs:enumeration value="Wolf"/>
+			<xs:enumeration value="logic"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>

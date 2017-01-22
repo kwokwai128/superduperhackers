@@ -6,9 +6,11 @@
         <position id="Alice" x="550" y="160"/>
         <visible id="Moderator" visible="true" fade="1" wait="false"/>
         <position id="Moderator" x="270" y="160"/>
+        <music id="suspense" loop="true"/>
         <changebranch branch="anims"/>
     </branch>
     <branch name="anims">
+        <bg id="background"/>
         <animation id="Moderator" animation="Wolf_Wolf"/>
         <animation id="Betty" animation="Betty_betty_talk"/>
         <animation id="Alice" animation="Alice_mc_talk_normal"/>

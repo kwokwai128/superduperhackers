@@ -21,11 +21,10 @@ import java.util.HashMap;
  * @author Adam Victor
  */
 public class LoadingScreen implements Screen {
-    private Screen nextScreen;
 
-    public LoadingScreen(Screen ns) {
-        nextScreen = ns;
-        //GameManager.assetManager().loadResources();
+
+    public LoadingScreen() {
+
     }
 
 
@@ -39,7 +38,7 @@ public class LoadingScreen implements Screen {
     public void render(float delta) {
         if (GameManager.assetManager().update()) {
             GameManager.assetManager().loadAnimations();
-            GameManager.game.setScreen(nextScreen);
+            GameManager.game.setScreen(new MainGameScreen());
             SaveManager.init();
             if (Constants.LOAD) { //todo fixme
                 SaveManager.load(Gdx.files.local("Saves/test2.bin"));

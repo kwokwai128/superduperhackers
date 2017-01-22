@@ -31,11 +31,16 @@
 
     <backgrounds>
         !testbackground.png
-
+        !background background.png
     </backgrounds>
 
     <music>
-
+        !cornered cornered.mp3
+        !discussion discussion.mp3
+        !BettyTheme enemytheme.mp3
+        !logic logic.mp3
+        !suspense suspense.mp3
+        !victory victory.mp3
     </music>
 
     <sounds>
@@ -43,6 +48,7 @@
         !talksoundfemale.wav
         !talksoundmale.wav
         !cheering.wav
+        !click click.wav
     </sounds>
 
     <characters>

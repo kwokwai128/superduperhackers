@@ -2,11 +2,13 @@ package com.wizered67.game.GUI;
 
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Pixmap.Format;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Actor;
@@ -15,6 +17,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton.TextButtonStyle;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 import com.kotcrab.vis.ui.VisUI;
@@ -22,6 +25,8 @@ import com.kotcrab.vis.ui.widget.LinkLabel;
 import com.wizered67.game.Constants;
 import com.wizered67.game.Evidence;
 import com.wizered67.game.GUI.Conversations.ConversationController;
+import com.wizered67.game.GameManager;
+
 /** Contains GUI elements and the ConversationController which the GUI elements are passed into.
  * Fixes GUI elements if screen is resized.
  * @author Adam Victor
@@ -58,11 +63,13 @@ public class GUIManager {
     static TextButton evidenceButton;
     static Label descriptionLabel;
     static LinkLabel infoLabel;
+    static Sound clickSound;
     /** Initializes all of the GUI elements and adds them to the Stage ST. Also
      * initializes ConversationController with the elements it will update.
      */
     public GUIManager(Stage st){
 		stage = st;
+		clickSound = GameManager.assetManager().get("click");
  		// Generate a 1x1 white texture and store it in the skin named "white".
  		Pixmap pixmap = new Pixmap(1, 1, Format.RGBA8888);
  		pixmap.setColor(Color.WHITE);
@@ -166,6 +173,7 @@ public class GUIManager {
             public void changed(ChangeEvent event, Actor actor) {
                 event.cancel();
                 showEvidence(false);
+                clickSound.play(2);
             }
         });
         evidenceButton.setX(50);
@@ -199,9 +207,14 @@ public class GUIManager {
             }
         });
         updateList();
-        String[] type = new String[] {"BoR", "Rulings"};
+        //String[] type = new String[] {"BoR", "Rulings"};
+        ImageButton.ImageButtonStyle[] imageButtonStyle = new ImageButton.ImageButtonStyle[2];
+        Drawable d = new TextureRegionDrawable(new TextureRegion(GameManager.assetManager().get("Textures/amendmenticon.png", Texture.class)));
+        imageButtonStyle[0] = new ImageButton.ImageButtonStyle(d, d, d, d, d, d);
+        Drawable d2 = new TextureRegionDrawable(new TextureRegion(GameManager.assetManager().get("Textures/courtcaseicon.png", Texture.class)));
+        imageButtonStyle[1] = new ImageButton.ImageButtonStyle(d2, d2, d2, d2, d2, d2);
         for (int i = 0; i < 2; i += 1) {
-            Button button = new TextButton(type[i], textButtonStyle);
+            Button button = new ImageButton(imageButtonStyle[i]);
             button.setUserObject(i);
             button.addListener(new ChangeListener() {
                 @Override
@@ -209,6 +222,7 @@ public class GUIManager {
                     listTypeIndex = (int) actor.getUserObject();
                     updateList();
                     event.cancel();
+                    clickSound.play(2);
                 }
             });
             column.left().add(button).width(64).height(64).pad(30, 10, 10, 10);
@@ -222,6 +236,7 @@ public class GUIManager {
             public void changed(ChangeEvent event, Actor actor) {
                 hideEvidence();
                 event.cancel();
+                clickSound.play(2);
             }
         });
         column.add(backButton).minWidth(100).minHeight(40).pad(20, 0, 0, 0).colspan(3);

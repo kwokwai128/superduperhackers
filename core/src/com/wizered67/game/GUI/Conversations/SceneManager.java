@@ -30,6 +30,8 @@ public class SceneManager {
     /** Identifier used for background texture. */
     private String backgroundIdentifier;
 
+    private transient Texture foreground;
+
     /** No argument constructor. Needed for serialization.*/
     public SceneManager() {
         conversationController = null;
@@ -44,6 +46,7 @@ public class SceneManager {
         characterSprites = new HashSet<>();
         batch = new SpriteBatch();
         backgroundIdentifier = "";
+        foreground = new Texture("Textures/foreground.png");
     }
     /** Called each frame to draw the background, update the Animation of each CharacterSprite, and
      * then draw them. DELTA is the amount of time that has elapsed since the
@@ -59,6 +62,7 @@ public class SceneManager {
             sprite.updateAnimation(delta);
             sprite.draw(batch);
         }
+        batch.draw(foreground, 0, 0);
         batch.end();
     }
    /** Adds the CharacterSprite with identifier IDENTIFIER to this scene. */

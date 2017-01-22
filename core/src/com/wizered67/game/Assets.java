@@ -58,6 +58,8 @@ public class Assets {
         assetIdentifiers = new HashMap<>();
         allAnimations = new HashMap<>();
         loadResources();
+        assetManager.load("Textures/amendmenticon.png", Texture.class);
+        assetManager.load("Textures/courtcaseicon.png", Texture.class);
     }
 
     public Animation getAnimation(String identifier) {
@@ -215,7 +217,11 @@ public class Assets {
 
 
     public synchronized <T> T get(String fileName, Class<T> type) {
-        return assetManager.get(assetIdentifiers.get(fileName), type);
+        if (assetIdentifiers.containsKey(fileName)) {
+            return assetManager.get(assetIdentifiers.get(fileName), type);
+        } else {
+            return assetManager.get(fileName, type);
+        }
     }
 
 
