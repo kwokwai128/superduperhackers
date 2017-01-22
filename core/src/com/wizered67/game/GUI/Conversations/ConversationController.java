@@ -96,7 +96,7 @@ public class ConversationController implements Controllable {
         initScriptManagers();
         if (!Constants.LOAD) { //todo fix
             //loadConversation("demonstration.conv");
-            loadConversation("animationTest.conv");
+            loadConversation("case1.conv");
             setBranch("default");
         }
         //remainingText =

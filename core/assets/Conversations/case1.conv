@@ -2,15 +2,17 @@
     <branch name="default">
 
         <assign>
-            anim <animation id="Alice" animation="Edgeworth_Edgeworth" wait="true"/>
-            think <animation id="Alice" animation="Edgeworth_Edgeworth" wait="true"/>
-            confront <animation id="Alice" animation="Edgeworth_Confront"/>
             delay <delay time="1" skippable="true"/>
+            intense <sound id="intense.wav"/>
         </assign>
 
-        <init language="Groovy">
-            correct 0
-        </init>
+        <position id="Betty" x="-20" y="160"/>
+        <position id="Alice" x="550" y="160"/>
+        <position id="Moderator" x="270" y="160"/>
+        <music id="suspense" loop="true"/>
+        <animation id="Betty" animation="Betty_betty_talk"/>
+        <animation id="Alice" animation="Alice_mc_normal"/>
+        <animation id="Moderator" animation="Wolf_Wolf_looking"/>
 
         <changebranch branch="introduction"/>
     </branch>
@@ -19,96 +21,189 @@
 
         Alice: My name is Alice.
 
-        Distant: (Hello. Welcome to the first 2017 U.S. Presidential Debate! . . .)
+        Distant: (Hello. Welcome to the first 2016 U.S. Presidential Debate! ...)
 
         Alice: I am exactly 35 years old. I am one of the youngest presidential candidates to make it this far.
 
-        Moderator: (. . . We’re happy to be here today with the two leading voices of our nation and hear their views on
-        various controversial topics. . .
-        : . . .Please welcome presidential candidates Betty ____ and Alice _____!) *cheering*
+        Moderator: (... We're happy to be here today with the two leading voices of our nation and hear their views on
+        various controversial topics...
+        :...Please welcome presidential candidates Betty Blue and Alice _____!) *cheering*
 
 
-        Alice: I’ve spent my entire life preparing for this moment. I’m a little nervous. @c{delay} I have a soft heart
-        but a loud voice, and that’s why I’m here today.
+        Alice: I've spent my entire life preparing for this moment. I'm a little nervous.
+        : I have a soft heart, but a loud voice, and that's why I'm here today.
+
+        <bg id="background"/>
+        <visible id="Betty" visible="true" fade="2" wait="false"/>
+        <visible id="Alice" visible="true" fade="2" wait="false"/>
+        <visible id="Moderator" visible="true" fade="2" wait="true"/>
 
 
-
-        <position id="Alice" x="10" y="160"/>
-        <animation id="Alice" animation="Edgeworth_Static"/>
-        <visible id="Alice" visible="true" fade="0.5" wait="true"/>
-
-        <position id="Betty" x="800" y="160"/>
-        <animation id="Betty" animation="Edgeworth_Static"/>
-        <direction id="Betty" direction="-1"/>
-        <visible id="Betty" visible="true" fade="0.5" wait="true"/>
-
-        <bg id="testbackground.png"/>
-        <sound id="intense.wav"/>
-        <music id="crossexamination.mp3" loop="false"/>
-
-
-
-        <position id="Moderator" x="200" y="160"/>
-        <animation id="Moderator" animation="Edgeworth_Static"/>
-        <visible id="Moderator" visible="true" fade="0.5" wait="true"/>
         Moderator: Thank you Senator Alice for your introduction.
 
         <name id="Alice" displayname="Alice LastName"/>
         Alice: Thank you, Mr. Wolf.
-        <visible id="Alice" visible="false" fade="0.5" wait="false"/>
 
         Moderator: Mrs. Betty, you may begin your introduction.
-
-        <visible id="Moderator" visible="false" fade="0.5" wait="true"/>
+        <music id="discussion" loop="true"/>
         <changebranch branch="bill"/>
     </branch>
 
     <branch name="bill">
-        <position id="Betty" x="800" y="160"/>
-        <animation id="Betty" animation="Edgeworth_Static"/>
-        <direction id="Betty" direction="-1"/>
-
-
         Betty: Thank you Moderator Wolf.
-        : Good evening everyone. I am Betty (last name), your next US President!
+        : Good evening everyone. I am Betty Blue, your next US President!
         : Americans are tired of having their voices ignored by the federal government.
         : It is ab-so-lu-te-ly horrible and terrifying to see so many Americans being ignored and their voices
         drowned in a sea of bureaucratic red tape.
-        : Americans should not own any guns as they are dangerous for children. So many kids are dying each day
-        from gun violence.
+        : With me as your president, I will assure that every gun in America is confiscated
+        so that no more children will die from treacherous gun violence.
         : Furthermore, oil companies should continue to drill away as it provides jobs, money and fuel to the
         US economy.
-        : Let us make America again. Let us take back the federal government from the corrupt politicians of
-        Washington so we can make American beautiful again.
-
-        <changebranch branch="choices"/>
+        : Let us take back the federal government from the corrupt politicians of Washington and
+        restore the power of the common people!
+        Alice: Something seems wrong here... I should press for more information or present evidence that
+        one of her plans would be unconstitutional.
+        <changebranch branch="statement1"/>
     </branch>
 
-    <branch name="choices">
-        Alice: Wait...something doesn't sound right...
-        <choices>
-            "Sea of bureaucratic red tapes...":
-            <changebranch branch="options"/>
-            "Americans should not own any guns...":
-            <script language="Groovy"> correct += 1</script>
-            <changebranch branch="options"/>
-            "Companies should drill away...":
-            <changebranch branch="options"/>
-            "Corrupt politicians of Washington...":
-            <changebranch branch="options"/>
-        </choices>
-    </branch>
-
-    <branch name="options">
+    <branch name="statement1">
+        !Betty: It is ab-so-lu-te-ly horrible and terrifying to see so many Americans being ignored and their voices
+        drowned in a sea of bureaucratic red tape.
         <choices>
             Press:
-            <changebranch branch="moreInfo"/>
+                <changebranch branch="press1"/>
             Evidence:
-            <changebranch branch="evidence"/>
-            Go back:
-            <changebranch branch="choices"/>
+                <evidence language="Groovy" variable="evidence"/>
+                <if language="Groovy"> {evidence != -1}
+                    <changebranch branch="wrong answer"/>
+                </if>
+                <changebranch branch="statement1"/>
+            Next:
+                <changebranch branch="statement2"/>
         </choices>
-        <if language="Groovy"><![CDATA[ {work < 2} ]]></if>
+    </branch>
+
+    <branch name="statement2">
+        !Betty: With me as your president, I will assure that every gun in America is confiscated
+        so that no more children will die from treacherous gun violence.
+        <choices>
+            Press:
+            <changebranch branch="press2"/>
+            Evidence:
+            <evidence language="Groovy" variable="evidence"/>
+            <if language="Groovy"> {evidence != -1}
+                <if language="Groovy"> {evidence == 0}
+                    <changebranch branch="right answer"/>
+                </if>
+                <changebranch branch="wrong answer"/>
+            </if>
+            <changebranch branch="statement2"/>
+            Previous:
+            <changebranch branch="statement1"/>
+            Next:
+            <changebranch branch="statement3"/>
+        </choices>
+    </branch>
+
+    <branch name="statement3">
+        !Betty: Furthermore, oil companies should continue to drill away as it provides jobs, money and fuel to the US economy.
+        <choices>
+            Press:
+            <changebranch branch="press3"/>
+            Evidence:
+            <evidence language="Groovy" variable="evidence"/>
+            <if language="Groovy"> {evidence != -1}
+                <changebranch branch="wrong answer"/>
+            </if>
+            <changebranch branch="statement3"/>
+            Previous:
+            <changebranch branch="statement2"/>
+            Next:
+            <changebranch branch="statement4"/>
+        </choices>
+    </branch>
+
+    <branch name="statement4">
+        !Betty: Let us take back the federal government from the corrupt politicians of Washington and restore
+        the power of the common people!
+        <choices>
+            Press:
+            <changebranch branch="press4"/>
+            Evidence:
+            <evidence language="Groovy" variable="evidence"/>
+            <if language="Groovy"> {evidence != -1}
+                <changebranch branch="wrong answer"/>
+            </if>
+            <changebranch branch="statement4"/>
+            Previous:
+            <changebranch branch="statement3"/>
+        </choices>
+    </branch>
+
+    <branch name="press1">
+        Alice: Bureaucratic red tape? Are you suggesting there are too many procedures in creating law?
+        Betty: Yes! It takes years for anything to get done. We need to cut more and more red tape!
+        Betty: I'll even cut the red tape myself.
+        Alice: (I think she's serious…)
+        <changebranch branch="statement1"/>
+    </branch>
+
+    <branch name="press2">
+        Alice: With all due respect--
+        Betty: You think kids should die!?
+        Alice: Of course not! But how do you plan to confiscate everyone's gun?
+        Betty: Well, they ought to be arrested if they don't comply!
+        Alice: (Something doesn't seem right…)
+        <changebranch branch="statement2"/>
+    </branch>
+
+    <branch name="press3">
+        Alice: There are several environmental hazards linked to oil-drilling--
+        Betty: Didn't you hear me? Jobs, money, and fuel to the US economy. Not that a youngster like you would understand anything about jobs and money.
+        Alice: I'm 35 years old…
+        Betty: And I'm rich! See the difference?
+        Moderator: She's right Ms. Alice, there is a difference!
+        Alice: That stings Wolf...
+        <changebranch branch="statement3"/>
+    </branch>
+
+    <branch name="press4">
+        Alice: Ms. Blue, you've been working in the federal government for many years now. How do we know YOU aren't one of those corrupt politicians?
+        Moderator: Gasp! Ms. Blue... is that true?!
+        Betty: You know what, Ms. ALICE_LAST_NAME, I'm taking that as a compliment.
+        Alice: ...How exactly...
+        Betty: I DO have years of federal government experience. Just the other day I was playing a spectacular round of golf with Senator Blake. Have you played golf with Senator Blake? Or any Senator for that matter?
+        Moderator: Great point, Ms. Blue! Your golf game is on point!
+        Alice: Let's just go on to the next question...
+        <changebranch branch="statement4"/>
+    </branch>
+
+    <branch name="wrong answer">
+        Alice: Your plans are unconstitutional and I have proof!
+        Betty: Do you?
+        Moderator: Do you really?
+        Alice: Yep, read it and weep!
+        Moderator: I don't see how that evidence proves anything.
+        Alice: (And now the only one weeping is me. But there's definitely something wrong...
+        I just have to find the illegal or unconstitutional statement and present evidence that proves it!)
+        <changebranch branch="statement1"/>
+    </branch>
+
+    <branch name="right answer">
+        <music id="cornered" loop="true"/>
+        Alice: Ms. Blue, I appreciate your sentiment. No Americans should fall victim to gun violence. But in addition to being outrageous, your plan would be @c{intense} unconstitutional!
+        Moderator: It… it is?!
+        Alice: Just take a look at this, the Second Amendment! People have the right to bear arms,and that means keeping guns!
+        Betty: What?! My debate preparation team never mentioned that!
+        Alice: It's pretty basic knowledge, Ms. Blue, I thought you would have known that. Especially with your years of experience.
+        Alice: (Ms. Blue looks distracted… is she flipping through papers? But we weren't supposed to have any prewritten notes on the stage. Just when did she get those?)
+        Moderator: Ahem, alright. Thank you ladies for your introduction.
+        <pausemusic/>
+        Alice: (Wait, I didn't give an introduction yet...)
+        Moderator: We may now begin the debate. First on the chopping block is foreign policy. Betty, you may begin.
+        Alice: (What about me???)
+        Alice: (It looks like the only way to get my foot in the door is to find the flaws in Betty's stances.)
+        <changeconv conv="case2.conv"/>
     </branch>
 
 </conversation>

@@ -99,6 +99,9 @@ public class PlayMusicCommand implements ConversationCommand {
     }
     /** Static method to create a new command from XML Element ELEMENT. */
     public static PlayMusicCommand makeCommand(XmlReader.Element element) {
+        if (element.getName().equals("pausemusic")) {
+            return new PlayMusicCommand(1);
+        }
         String id = element.getAttribute("id");
         boolean loop = element.getBoolean("loop", false);
         return new PlayMusicCommand(id, loop);

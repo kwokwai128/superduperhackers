@@ -4,10 +4,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.wizered67.game.GameManager;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Represents a Scene with a set of characters that are updated
@@ -30,6 +27,8 @@ public class SceneManager {
     /** Identifier used for background texture. */
     private String backgroundIdentifier;
 
+    private List<String> removeList;
+
     private transient Texture foreground;
 
     /** No argument constructor. Needed for serialization.*/
@@ -39,6 +38,7 @@ public class SceneManager {
         batch = new SpriteBatch();
         allCharacters = null;
         background = null;
+        removeList = new ArrayList<>();
     }
     /** Creates a new SceneManager with ConversationController MW and no CharacterSprites. */
     public SceneManager(ConversationController mw) {
@@ -47,6 +47,7 @@ public class SceneManager {
         batch = new SpriteBatch();
         backgroundIdentifier = "";
         foreground = new Texture("Textures/foreground.png");
+        removeList = new ArrayList<>();
     }
     /** Called each frame to draw the background, update the Animation of each CharacterSprite, and
      * then draw them. DELTA is the amount of time that has elapsed since the
@@ -62,9 +63,19 @@ public class SceneManager {
             sprite.updateAnimation(delta);
             sprite.draw(batch);
         }
-        batch.draw(foreground, 0, 0);
+        if (characterSprites.size() > 0) {
+            batch.draw(foreground, 0, 0);
+        }
+        for (String character : removeList) {
+            characterSprites.remove(character);
+        }
         batch.end();
     }
+
+    public void remove(String id) {
+        removeList.add(id);
+    }
+
    /** Adds the CharacterSprite with identifier IDENTIFIER to this scene. */
     public void addCharacter(String identifier) {
         characterSprites.add(allCharacters.get(identifier.toLowerCase()));

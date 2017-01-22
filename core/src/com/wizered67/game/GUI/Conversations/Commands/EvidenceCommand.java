@@ -23,6 +23,7 @@ public class EvidenceCommand implements ConversationCommand {
     @Override
     public void execute(ConversationController conversationController) {
         GUIManager.showEvidence(true);
+        done = false;
     }
 
     @Override

@@ -28,7 +28,9 @@
         <animation id="Betty" animation="Betty_betty_smug"/>
         <animation id="Alice" animation="Alice_mc_smug"/>
         <delay time="2"/>
-        Alice: Hello Christine!
+        Alice: The United States should pull out of NATO because it is the US government has spent
+        way too much money compared to everyone else! It is shameful that other governments aren’t paying
+        their fair share as recommended under NATO. It’s unlawful.
         Betty: Die die die!
         Moderator: Now now, settle down please.
         <changebranch branch="anims"/>

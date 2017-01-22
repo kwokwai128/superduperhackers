@@ -237,6 +237,9 @@ public class GUIManager {
                 hideEvidence();
                 event.cancel();
                 clickSound.play(2);
+                if (presentButton.isVisible()) {
+                    present(-1);
+                }
             }
         });
         column.add(backButton).minWidth(100).minHeight(40).pad(20, 0, 0, 0).colspan(3);
@@ -246,7 +249,7 @@ public class GUIManager {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 event.cancel();
-                present();
+                present(currentEvidence.id);
             }
         });
         main.add(presentButton).minWidth(150).minHeight(40).pad(10, 0, 0, 0).colspan(3);
@@ -288,10 +291,10 @@ public class GUIManager {
 	private static void initEvidence() {
         allEvidence[0] = new Array<>(true, 5);
         allEvidence[1] = new Array<>(true, 5);
-        allEvidence[1].add(new Evidence("New York Times Co. v Sullivan", "Hello world", 0, "https://en.wikipedia.org/wiki/New_York_Times_Co._v._Sullivan"));
+        allEvidence[1].add(new Evidence("New York Times Co. v Sullivan", "Hello world", 3, "https://en.wikipedia.org/wiki/New_York_Times_Co._v._Sullivan"));
         allEvidence[1].add(new Evidence("Roe v Wade", "desc", 1, "https://en.wikipedia.org/wiki/Roe_v._Wade"));
         allEvidence[0].add(new Evidence("1st Amendment", "test", 2, "https://en.wikipedia.org/wiki/First_Amendment_to_the_United_States_Constitution"));
-        allEvidence[0].add(new Evidence("2nd Amendment", "The Second Amendment (Amendment II) to the United States Constitution protects the right of the people to keep and bear arms and was adopted on December 15, 1791, as part of the first ten amendments contained in the Bill of Rights. The Supreme Court of the United States has ruled that the right belongs to individuals, while also ruling that the right is not unlimited and does not prohibit all regulation of either firearms or similar devices. State and local governments are limited to the same extent as the federal government from infringing this right per the incorporation of the Bill of Rights.", 3, "https://en.wikipedia.org/wiki/Second_Amendment_to_the_United_States_Constitution"));
+        allEvidence[0].add(new Evidence("2nd Amendment", "The Second Amendment (Amendment II) to the United States Constitution protects the right of the people to keep and bear arms and was adopted on December 15, 1791, as part of the first ten amendments contained in the Bill of Rights. The Supreme Court of the United States has ruled that the right belongs to individuals, while also ruling that the right is not unlimited and does not prohibit all regulation of either firearms or similar devices. State and local governments are limited to the same extent as the federal government from infringing this right per the incorporation of the Bill of Rights.", 0, "https://en.wikipedia.org/wiki/Second_Amendment_to_the_United_States_Constitution"));
     }
 
 	private static void hideEvidence() {
@@ -307,7 +310,8 @@ public class GUIManager {
         column.setVisible(true);
         evidenceButton.setVisible(false);
         presentButton.setVisible(canChoose);
-        backButton.setVisible(!canChoose);
+        backButton.setVisible(true);
+        //backButton.setVisible(!canChoose);
         descriptionLabel.setVisible(true);
         infoLabel.setVisible(true);
     }
@@ -316,9 +320,9 @@ public class GUIManager {
         list.setItems(allEvidence[listTypeIndex]);
     }
 
-    private static void present() {
+    private static void present(int id) {
         hideEvidence();
-        conversationController.present(currentEvidence.id);
+        conversationController.present(id);
     }
 
     public GUIManager() {

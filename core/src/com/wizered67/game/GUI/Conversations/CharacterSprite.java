@@ -242,7 +242,7 @@ public class CharacterSprite {
     /** Removes this CharacterSprite from the SceneManager. */
     public void removeFromScene() {
         if (manager != null) {
-            manager.removeCharacter(identifier);
+            manager.remove(identifier);
             manager = null;
         }
     }

@@ -56,8 +56,8 @@
         <character id="Librarian" name="???" sound="talksoundmale.wav"/>
         <character id="Buddy" name="YOLO SWAGGINS"  sound="talksoundmale.wav"/>
         <character id="Alice" name="???" sound="talksoundfemale.wav"/>
-        <character id="Betty" name="Betty LastName" sound="talksoundfemale.wav"/>
-        <character id="Moderator" name="Moderator Wolf" sound="talksoundmale.wav"/>
+        <character id="Betty" name="Betty Blue" sound="talksoundfemale.wav"/>
+        <character id="Moderator" name="Wolf Blitzer" sound="talksoundmale.wav"/>
         <character id="Distant" name="Distant Voice" sound="talksoundfemale.wav"/>
     </characters>
 </resources>
