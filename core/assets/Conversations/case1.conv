@@ -45,7 +45,6 @@
         Alice: Thank you, Mr. Wolf.
 
         Moderator: Ms. Betty, you may begin your introduction.
-        
 
         <music id="discussion" loop="true"/>
         <changebranch branch="bill"/>
@@ -53,18 +52,24 @@
 
     <branch name="bill">
         Betty: Thank you Moderator Wolf.
-        : Good evening everyone. I am Betty Blue, your next US President!
-        : Americans are tired of having their voices ignored by the federal government.
-        : It is ab-so-lu-te-ly horrible and terrifying to see so many Americans being ignored and their voices
+        <animation id="Betty" animation="Betty_betty_smug" />
+        Betty: Good evening everyone. I am Betty Blue, your next US President!
+        Betty: Americans are tired of having their voices ignored by the federal government.
+        <animation id="Betty" animation="Betty_betty_angry" />
+        Betty: It is ab-so-lu-te-ly horrible and terrifying to see so many Americans being ignored and their voices
         drowned in a sea of bureaucratic red tape.
-        : With me as your president, I will assure that every gun in America is confiscated
+        <animation id="Betty" animation="Betty_betty_serious" />
+        Betty: With me as your president, I will assure that every gun in America is confiscated
         so that no more children will die from treacherous gun violence.
-        : Furthermore, oil companies should continue to drill away as it provides jobs, money and fuel to the
+        Betty: Furthermore, oil companies should continue to drill away as it provides jobs, money and fuel to the
         US economy.
-        : Let us take back the federal government from the corrupt politicians of Washington and
+        <animation id="Betty" animation="Betty_betty_talk" />
+        Betty: Let us take back the federal government from the corrupt politicians of Washington and
         restore the power of the common people!
+        <animation id="Alice" animation="Alice_mc_sweat" />
         Alice: Something seems wrong here... I should press for more information or present evidence that
         one of her plans would be unconstitutional.
+        <animation id="Alice" animation="Alice_mc_normal" />
         <changebranch branch="statement1"/>
     </branch>
 
@@ -73,15 +78,15 @@
         drowned in a sea of bureaucratic red tape.
         <choices>
             Press:
-                <changebranch branch="press1"/>
+            <changebranch branch="press1"/>
             Evidence:
-                <evidence language="Groovy" variable="evidence"/>
-                <if language="Groovy"> {evidence != -1}
-                    <changebranch branch="wrong answer"/>
-                </if>
-                <changebranch branch="statement1"/>
+            <evidence language="Groovy" variable="evidence"/>
+            <if language="Groovy"> {evidence != -1}
+                <changebranch branch="wrong answer"/>
+            </if>
+            <changebranch branch="statement1"/>
             Next:
-                <changebranch branch="statement2"/>
+            <changebranch branch="statement2"/>
         </choices>
     </branch>
 
@@ -144,28 +149,36 @@
 
     <branch name="press1">
         Alice: Bureaucratic red tape? Are you suggesting there are too many procedures in creating law?
+        <animation id="Betty" animation="Betty_betty_serious" />
         Betty: Yes! It takes years for anything to get done. We need to cut more and more red tape!
         Betty: I'll even cut the red tape myself.
         Alice: (I think she's serious…)
+        <animation id="Betty" animation="Betty_betty_talk" />
         <changebranch branch="statement1"/>
     </branch>
 
     <branch name="press2">
+        <animation id="Alice" animation="Alice_mc_sweat"/>
         Alice: With all due respect--
+        <animation id="Betty" animation="Betty_betty_serious"/>
         Betty: You think kids should die!?
         Alice: Of course not! But how do you plan to confiscate everyone's gun?
         Betty: Well, they ought to be arrested if they don't comply!
         Alice: (Something doesn't seem right…)
+        <animation id="Alice" animation="Alice_mc_normal"/>
+        <animation id="Betty" animation="Betty_betty_talk"/>
         <changebranch branch="statement2"/>
     </branch>
 
     <branch name="press3">
         Alice: There are several environmental hazards linked to oil-drilling--
+        <animation id="Betty" animation="Betty_betty_serious" />
         Betty: Didn't you hear me? Jobs, money, and fuel to the US economy. Not that a youngster like you would understand anything about jobs and money.
         Alice: I'm 35 years old…
         Betty: And I'm rich! See the difference?
         Moderator: She's right Ms. Wonder, there is a difference!
         Alice: That stings Wolf...
+        <animation id="Betty" animation="Betty_betty_talk" />
         <changebranch branch="statement3"/>
     </branch>
 
@@ -174,6 +187,7 @@
         Moderator: Gasp! Ms. Blue... is that true?!
         Betty: You know what, Ms. Wonder, I'm taking that as a compliment.
         Alice: ...How exactly...
+        <animation id="Betty" animation="Betty_betty_smug" />
         Betty: I DO have years of federal government experience. Just the other day I was playing a spectacular round of golf with Senator Blake. Have you played golf with Senator Blake? Or any Senator for that matter?
         Moderator: Great point, Ms. Blue! Your golf game is on point!
         Alice: Let's just go on to the next question...
@@ -181,11 +195,15 @@
     </branch>
 
     <branch name="wrong answer">
+        <animation id="Alice" animation="Alice_mc_smug" />
         Alice: Your plans are unconstitutional and I have proof!
+        <animation id="Betty" animation="Betty_betty_smug" />
         Betty: Do you?
         Moderator: Do you really?
+        <animation id="Alice" animation="Alice_mc_sweat" />
         Alice: Yep, read it and weep!
         Moderator: I don't see how that evidence proves anything.
+        <animation id="Alice" animation="Alice_mc_sweat" />
         Alice: (And now the only one weeping is me. But there's definitely something wrong...
         I just have to find the illegal or unconstitutional statement and present evidence that proves it!)
         <changebranch branch="statement1"/>
@@ -196,16 +214,21 @@
         Alice: Ms. Blue, I appreciate your sentiment. No Americans should fall victim to gun violence. But in addition to being outrageous, your plan would be @c{intense} unconstitutional!
         Moderator: It… it is?!
         Alice: Just take a look at this, the Second Amendment! People have the right to bear arms,and that means keeping guns!
+        <animation id="Betty" animation="Betty_betty_sweat" />
         Betty: What?! My debate preparation team never mentioned that!
         Alice: It's pretty basic knowledge, Ms. Blue, I thought you would have known that. Especially with your years of experience.
+        <animation id="Alice" animation="Alice_mc_talk_normal" />
         Alice: (Ms. Blue looks distracted… is she flipping through papers? But we weren't supposed to have any prewritten notes on the stage. Just when did she get those?)
         Moderator: Ahem, alright. Thank you ladies for your introduction.
         <pausemusic/>
+        <animation id="Alice" animation="Alice_mc_sweat" />
         Alice: (Wait, I didn't give an introduction yet...)
+        <animation id="Moderator" animation="Wolf_Wolf" />
         Moderator: We may now begin the debate. First on the chopping block is foreign policy. Betty, you may begin.
         Alice: (What about me???)
         Alice: (It looks like the only way to get my foot in the door is to find the flaws in Betty's stances.)
-        <changeconv conv="case2.conv"/>
+        <animation id="Alice" animation="Alice_mc_normal" />
+        <changeconv conv="case2foreign1.conv"/>
     </branch>
 
 </conversation>

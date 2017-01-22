@@ -1,0 +1,233 @@
+<conversation xmlns="urn:conversations">
+    <branch name="default">
+
+        <music id="suspense" loop="true"/>
+        <animation id="Betty" animation="Betty_betty_talk"/>
+        <animation id="Alice" animation="Alice_mc_normal"/>
+        <animation id="Moderator" animation="Wolf_Wolf_looking"/>
+
+        Moderator: Let us move on to our next topic: education!
+        <animation id="Moderator" animation="Wolf_Wolf"/>
+        Moderator: Ms. Blue, you may continue.
+
+
+        <changebranch branch="bill"/>
+
+    </branch>
+
+    <branch name="bill">
+        Betty: Thank you Moderator Wolf.
+        : We continue to see African Americans, Hispanics, Asians and other minorities underrepresented in many
+        universities. Universities should take drastic action to increase the enrollment numbers of minorities!
+        : Districts should not be required to spend equal amounts of money between poor neighborhoods and
+        less-poor neighborhoods. We need less government regulation and should allow the states to decide.
+        : We should have a report card for every teacher and school to determine funding, based on their performance.
+        Good schools get more money while poor schools get less money.
+        : Standardized testing is turning students into passive test-taking machines. It fails to incorporate multilevel
+        thinking and disregards students’ full potential.
+
+        Alice: Something seems wrong here... I should press for more information or present evidence that
+        one of her plans would be unconstitutional.
+        <changebranch branch="statement1"/>
+    </branch>
+
+    <branch name="statement1">
+        <animation id="Betty" animation="Betty_betty_serious"/>
+        !Betty: We continue to see African Americans, Hispanics, Asians and other minorities underrepresented in many
+        universities. Universities should take drastic action to increase the enrollment numbers of minorities!
+        <choices>
+            Press:
+            <changebranch branch="press1"/>
+            Evidence:
+            <evidence language="Groovy" variable="evidence"/>
+            <if language="Groovy"> {evidence != -1}
+
+                <changebranch branch="wrong answer"/>
+            </if>
+            <changebranch branch="statement1"/>
+            Next:
+            <changebranch branch="statement2"/>
+        </choices>
+
+    </branch>
+
+    <branch name="statement2">
+
+        !Betty: Districts and states should not be required to spend equal amounts of money between poor neighborhoods and
+        less-poor neighborhoods. We need less government regulation and should allow the states to decide.
+        <choices>
+            Press:
+            <changebranch branch="press2"/>
+            Evidence:
+            <evidence language="Groovy" variable="evidence"/>
+            <if language="Groovy"> {evidence != -1}
+                <changebranch branch="wrong answer"/>
+            </if>
+            <changebranch branch="statement2"/>
+            Previous:
+            <changebranch branch="statement1"/>
+            Next:
+            <changebranch branch="statement3"/>
+        </choices>
+
+    </branch>
+
+    <branch name="statement3">
+
+        !Betty: We should have a report card for every teacher and school to determine funding, based on their performance.
+        Good schools get more money while poor schools get less money.
+        <choices>
+            Press:
+            <changebranch branch="press3"/>
+            Evidence:
+            <evidence language="Groovy" variable="evidence"/>
+            <if language="Groovy"> {evidence != -1}
+                <changebranch branch="wrong answer"/>
+            </if>
+            <changebranch branch="statement3"/>
+            Previous:
+            <changebranch branch="statement2"/>
+            Next:
+            <changebranch branch="statement4"/>
+        </choices>
+
+    </branch>
+
+    <branch name="statement4">
+
+        !Betty: Standardized testing is turning students into passive test-taking machines. It fails to incorporate multilevel
+        thinking and disregards students’ full potential.
+        <choices>
+            Press:
+            <changebranch branch="press4"/>
+            Evidence:
+            <evidence language="Groovy" variable="evidence"/>
+            <if language="Groovy"> {evidence != -1}
+                <changebranch branch="wrong answer"/>
+            </if>
+            <changebranch branch="statement4"/>
+            Previous:
+            <changebranch branch="statement3"/>
+
+        </choices>
+
+    </branch>
+
+    <branch name="press1">
+        <animation id="Alice" animation="Alice_mc_normal"/>
+        Alice: How so?
+        <animation id="Betty" animation="Betty_betty_angry"/>
+        Betty: Quotas! Obviously quotas so more minorities can get into universities.
+        Betty: The racial breakdown of many universities throughout the United States don’t represent the
+        American population.
+
+        !Alice: Wait...is there something strange about that?
+        <choices>
+            Evidence:
+            <evidence language="Groovy" variable="evidence"/>
+            <if language="Groovy"> {evidence != -1}
+                <if language="Groovy"> {evidence == 4}
+                    <changebranch branch="right answer"/>
+                </if>
+                <changebranch branch="wrong answer"/>
+            </if>
+            Back:
+            <changebranch branch="statement1"/>
+        </choices>
+        <changebranch branch="statement1"/>
+    </branch>
+
+
+    <branch name="press2">
+        <animation id="Alice" animation="Alice_mc_talk_normal"/>
+        Alice: What are the standards for dividing the funding?
+        <animation id="Betty" animation="Betty_betty_smug"/>
+        Betty: Ah, yes. I was anticipating your question.
+        <animation id="Betty" animation="Betty_betty_talk"/>
+        Betty: Instead of equal distribution, state governments should base its funding on
+        other factors such as condition of the school, need for supplies and resources,
+        etc.
+        Alice: How are you going to inspect those factors?
+        <animation id="Betty" animation="Betty_betty_smug"/>
+        Betty: Easy. Each district will send an inspector to its schools and provide a
+        report of schools’ conditions for the state to evaluate.
+        And a new job is created! Look at that.
+        <animation id="Alice" animation="Alice_mc_normal"/>
+        Alice: (Seems unrealistic...but nothing wrong with it)
+        <changebranch branch="statement2"/>
+    </branch>
+
+    <branch name="press3">
+        <animation id="Alice" animation="Alice_mc_sweat"/>
+        Alice: Isn’t that a little unfair? Aren’t you discriminating kids over their grades? alice_sweat
+        Betty: Hardly. I see no problem in giving more resources to kids with more
+        potential. I believe in psychology, this is called positive reinforcement.
+        Alice: But…
+        <animation id="Betty" animation="Betty_betty_talk"/>
+        Betty: (Cuts Alice off) I know all about what you are thinking, Ms.Wonder. betty_talk
+        Betty: I also want states to give schools with big enrollment of students larger
+        amounts of funding. There should be a student population ratio to money to also
+        determine how much funding each school receives.
+        Betty: This balances the funding by performance.
+        <animation id="Moderator" animation="Wolf_Wolf_looking"/>
+        Moderator: Ms. Blue, you have really thought about this.
+        <animation id="Betty" animation="Betty_betty_smug"/>
+        Betty: Of course, I come prepared.
+
+        <changebranch branch="statement3"/>
+    </branch>
+
+    <branch name="press4">
+        <animation id="Alice" animation="Alice_mc_normal"/>
+        Alice: (Surprisingly, I agree with her)
+        <animation id="Betty" animation="Betty_betty_serious"/>
+        Betty: Undoubtedly, some kind of standardized testing is needed for national consistency,
+        but we should radically reform the current system.
+        <animation id="Alice" animation="Alice_mc_smug"/>
+        Alice: I agree! A system which repeatedly tries to measure students by a limited number of skill sets--
+        <animation id="Betty" animation="Betty_betty_angry"/>
+        Betty: Don’t you dare try to steal the limelight! You don’t deserve it!
+        <animation id="Alice" animation="Alice_mc_sweat"/>
+        Alice: Huh?!
+        <animation id="Betty" animation="Betty_betty_serious"/>
+        Betty: Look, I’m going to be president anyways. It doesn’t matter what you say in the end. It’s MY words
+        the audience needs to hear.
+        Alice: (So much for a debate…)
+
+        <changebranch branch="statement4"/>
+    </branch>
+
+    <branch name="wrong answer">
+        Alice: Your propositions are illegal and I have proof!
+        Betty: Do you?
+        Moderator: Do you really?
+        Alice: Yep, read it and weep!
+        Moderator: I don't see how that evidence is relevant.
+        Alice: (And now the only one weeping is me. But there's definitely something wrong...
+        I just have to find the illegal or unconstitutional statement and present evidence that proves it!)
+        <changebranch branch="statement1"/>
+    </branch>
+
+    <branch name="right answer">
+        <music id="cornered" loop="true"/>
+        <animation id="Alice" animation="Alice_mc_talk_normal"/>
+        Alice: Ms. Blue, indeed there is not enough racial diversity in American universities...
+        Alice: But I must inform you that your idea violates @c{intense} a supreme court case!
+        Moderator: It… it does?!
+        Alice: Take a look at this, Regents of the University of California v. Bakke. upheld affirmation action,
+        allowing race to be one of the factors determining college admission.
+        Alice: It ruled, however, a specific racial quotas are illegal!
+        <animation id="Betty" animation="Betty_betty_sweat"/>
+        Betty: What?! My debate preparation team never mentioned that!
+        Alice: This is a pretty well known court ruling. With years in the political scene, shouldn't you be familiar
+        with these kind of knowledge?
+        <animation id="Alice" animation="Alice_mc_normal"/>
+        Alice: (Ms. Blue looks distracted… is she flipping through papers again? This is getting more and more suspicious)
+        <animation id="Moderator" animation="Wolf_Wolf_looking"/>
+        Moderator: Ahem, thank you ladies for this insightful discussion.
+        <pausemusic/>
+        <changeconv conv="case2.conv"/>
+    </branch>
+
+
+</conversation>

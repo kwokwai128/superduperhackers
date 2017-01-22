@@ -1,0 +1,223 @@
+<conversation xmlns="urn:conversations">
+    <branch name="default">
+
+        <assign>
+            delay <delay time="1" skippable="true"/>
+            intense <sound id="intense.wav"/>
+        </assign>
+
+        <changebranch branch="case2"/>
+    </branch>
+
+    <branch name="case2">
+        <music id="discussion" loop="true"/>
+
+        Betty: Thank you once again Wolf.
+        <animation id="Betty" animation="Betty_betty_serious"/>
+        Betty: The US does not have to police the world. It is shameful that other governments in NATO refuse to
+        pay their fair share while America is forced to spend unthinkable amounts of money to make up for everyone
+        else. It's ab-so-lute-ly unlawful.
+        <animation id="Betty" animation="Betty_betty_angry" />
+        Betty: Terrorists are killing our citizens left and right, so we should continue to waterboard against the
+        terrorists if we want to find out where their colleagues are hiding. When they harm our families and friends,
+        it only makes sense to return the favor.
+        <animation id="Betty" animation="Betty_betty_talk" />
+        Betty: China has continued to make these fake bogus islands in the South China Sea. It is unlawful and should be
+        condemned by everyone. The US should take action on behalf of the UN!
+
+        Betty: Russia has nukes. The US has nukes. We need to build even more nukes.
+
+        <animation id="Alice" animation="Alice_mc_sweat" />
+        Alice: (Something doesn't seem right again! It was pretty cool when I pointed out she was wrong. Maybe
+        she slipped up again? I should press for more information or present evidence that
+        one of her plans would be unconstitutional.)
+        <changebranch branch="statement1"/>
+    </branch>
+
+    <branch name="statement1">
+        !Betty: The US does not have to police the world. It is shameful that other governments in NATO refuse to
+        pay their fair share while America is forced to spend unthinkable amounts of money to make up for everyone
+        else. It's ab-so-lute-ly unlawful.
+        <choices>
+            Press:
+                <changebranch branch="press1"/>
+            Evidence:
+                <evidence language="Groovy" variable="evidence"/>
+                <if language="Groovy"> {evidence != -1}
+                <changebranch branch="wrong answer"/>
+                    </if>
+                <changebranch branch="statement1"/>
+            Next:
+                <changebranch branch="statement2"/>
+        </choices>
+    </branch>
+
+    <branch name="statement2">
+        !Betty: Terrorists are killing our citizens left and right, so we should continue to use the waterboard technique against
+        the terrorists if we want to find out where their colleagues are hiding. When they harm our families and friends,
+        it only makes sense to return the favor.
+        <choices>
+            Press:
+            <changebranch branch="press2"/>
+            Evidence:
+            <evidence language="Groovy" variable="evidence"/>
+            <if language="Groovy"> {evidence != -1}
+                <if language="Groovy"> {evidence == 1}
+                    <changebranch branch="right answer"/>
+                </if>
+                <changebranch branch="wrong answer"/>
+            </if>
+            <changebranch branch="statement2"/>
+            Previous:
+            <changebranch branch="statement1"/>
+            Next:
+            <changebranch branch="statement3"/>
+        </choices>
+    </branch>
+
+    <branch name="statement3">
+        !Betty: China has continued to make these fake bogus islands in the South China Sea. It is unlawful and should be
+        condemned by everyone. The US should take action on behalf of the UN!
+        <choices>
+            Press:
+            <changebranch branch="press3"/>
+            Evidence:
+            <evidence language="Groovy" variable="evidence"/>
+            <if language="Groovy"> {evidence != -1}
+                <changebranch branch="wrong answer"/>
+            </if>
+            <changebranch branch="statement3"/>
+            Previous:
+            <changebranch branch="statement2"/>
+            Next:
+            <changebranch branch="statement4"/>
+        </choices>
+    </branch>
+
+    <branch name="statement4">
+        !Betty: Russia has nukes. The US has nukes. We need to build even more nukes.
+        <choices>
+        Press:
+        <changebranch branch="press4"/>
+        Evidence:
+        <evidence language="Groovy" variable="evidence"/>
+        <if language="Groovy"> {evidence != -1}
+            <changebranch branch="wrong answer"/>
+        </if>
+        <changebranch branch="statement4"/>
+        Previous:
+        <changebranch branch="statement3"/>
+        </choices>
+
+    </branch>
+
+    <branch name="press1">
+        <animation id="Alice" animation="Alice_mc_talk_normal" />
+        Alice: America is the richest country in the entire world. Don’t you think we could spare a little for poorer
+        nations?
+        <animation id="Betty" animation="Betty_betty_talk" />
+        Betty: The American soldiers’ sole duty is to defend the citizens of the United States who pay their salaries
+        and owe allegiance to the United States.
+        <animation id="Betty" animation="Betty_betty_smug" />
+        Betty: Poorer nations should be thankful that we’ve stayed in NATO this long. Estonians, Latvians, Lithuanians,
+        Croatians, and Albanians should learn to defend themselves,
+        and when I’m president, they’ll have to!
+        <changebranch branch="statement1"/>
+    </branch>
+
+    <branch name="press2">
+        <animation id="Alice" animation="Alice_mc_sweat" />
+        <animation id="Betty" animation="Betty_betty_talk" />
+        Alice: What do you mean by return the favor?
+        Betty: Exactly what it sounds like, Alice.
+        Moderator: You don't mean...
+        <animation id="Betty" animation="Betty_betty_smug" />
+        Betty: Oh, I do.
+        <animation id="Alice" animation="Alice_mc_sweat" />
+        Alice: (That’s insane!)
+        Alice: You want to harm the terrorists’ families and friends?
+        <animation id="Betty" animation="Betty_betty_serious" />
+        Betty: Of course. Terrorists and their families should be punished.
+        <animation id="Alice" animation="Alice_mc_angry" />
+        Alice: (Is that even allowed!? Something doesn’t seem right)
+        <changebranch branch="statement2"/>
+    </branch>
+
+    <branch name="press3">
+        <animation id="Alice" animation="Alice_mc_normal" />
+        <animation id="Moderator" animation="Wolf_Wolf_looking" />
+        Moderator: I'd love to go on an island vacation right now.
+        <animation id="Betty" animation="Betty_betty_smug" />
+        Betty: Not in the South China Sea, you don’t.
+        Moderator: Why’s that?
+        <animation id="Alice" animation="Alice_mc_sweat" />
+        Alice: That area is riddled with conflict, Mr. Blitzer. It’s incredibly unstable.
+        Moderator: Sigh, that's disappointing.
+        <animation id="Betty" animation="Betty_betty_talk" />
+        Betty: Don't worry Wolf, after this debate we can take a my private jet to my beautiful private island on the
+        coast of Africa.
+        Alice: (Private jet? Private island? I want those.)
+        Alice: (Also when did Betty get so close to Mr. Blitzer?)
+        <changebranch branch="statement3"/>
+    </branch>
+
+    <branch name="press4">
+        <animation id="Betty" animation="Betty_betty_talk" />
+        <animation id="Alice" animation="Alice_mc_sweat" />
+        Alice: Wait, what does that mean!?
+        Betty: You heard me right. This world needs more nukes.
+        Alice: That's crazy!
+        <animation id="Betty" animation="Betty_betty_serious" />
+        Betty: Is it now? France, India and the UK have nukes and anything can happen.  I've met with the President
+        about our nuclear arsenal.
+        Alice: (What!? She has met with the President!?)
+        Alice (Though a crazy, it doesn't sound illegal if the President was involved.)
+        <changebranch branch="statement4"/>
+    </branch>
+
+    <branch name="wrong answer">
+        <animation id="Alice" animation="Alice_mc_smug" />
+        Alice: Your plans are unconstitutional and I have proof!
+        <animation id="Betty" animation="Betty_betty_smug" />
+        Betty: Do you?
+        Moderator: Do you really?
+        <animation id="Alice" animation="Alice_mc_sweat" />
+        Alice: Yep, read it and weep!
+        Moderator: I don't see how that evidence proves anything.
+        <animation id="Alice" animation="Alice_mc_sweat" />
+        Alice: (And now the only one weeping is me. But there's definitely something wrong...
+        I just have to find the illegal or unconstitutional statement and present evidence that proves it!)
+        <changebranch branch="statement1"/>
+    </branch>
+
+    <branch name="right answer">
+        <music id="cornered" loop="true"/>
+        <animation id="Alice" animation="Alice_mc_smug" />
+        Alice: Ms. Blue, someone on your debate team is getting fired because of your deadly proposal @c{intense} unconstitutional!
+        Moderator: What!? You mean we can't kill terrorists families?
+        Alice: May I point your attention to the Eighth Amendment! No cruel and unusual punishments can be inflicted by the government!
+        <animation id="Betty" animation="Betty_betty_sweat" />
+        Betty: What?! It doesn't sound unusual to me!
+        Alice: It's pretty basic knowledge, Ms. Blue, I thought you would have known that. Especially with your years of experience.
+        Alice: (Ms. Blue looks distracted… is she flipping through papers again? Something doesn't seem right...)
+        Betty: Ah ha!
+        Moderator: Is something wrong Ms. Blue?
+        Betty: Though it may violate the 8th Amendment, it isn't exactly @c{intense} unconstitutional!
+        <music id="BettyTheme" loop="true" />
+        <animation id="Alice" animation="Alice_mc_sweat" />
+        Alice: WHAT!?
+        <animation id="Moderator" animation="Wolf_Wolf_looking" />
+        Moderator: No way!
+        <animation id="Betty" animation="Betty_betty_smug" />
+        Betty: Technically it may be cruel and unusual, the CIA has continued to exercise these practices! There aren't any court cases or laws stating
+        these actions are illegal!
+        Alice: (You can't be serious...)
+        Moderator: Ms. Blue has a point but Ms. Alice you have made a serious note about Ms. Blue's plan. We will let the American people decide.
+        <pausemusic/>
+        Alice: (Damn! I was close but I think I got brownie points for pointing out her plan could have flaws)
+        <animation id="Moderator" animation="Wolf_Wolf_looking" />
+        Moderator: On to the next topic, domestic policies!)
+        <changeconv conv="domestic.conv"/>
+    </branch>
+
+</conversation>
