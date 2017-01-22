@@ -174,7 +174,7 @@
         Alice: There are several environmental hazards linked to oil-drilling--
         <animation id="Betty" animation="Betty_betty_serious" />
         Betty: Didn't you hear me? Jobs, money, and fuel to the US economy. Not that a youngster like you would understand anything about jobs and money.
-        Alice: I'm 35 years old…
+        Alice: I'm 35 years old...
         Betty: And I'm rich! See the difference?
         Moderator: She's right Ms. Wonder, there is a difference!
         Alice: That stings Wolf...
@@ -212,13 +212,13 @@
     <branch name="right answer">
         <music id="cornered" loop="true"/>
         Alice: Ms. Blue, I appreciate your sentiment. No Americans should fall victim to gun violence. But in addition to being outrageous, your plan would be @c{intense} unconstitutional!
-        Moderator: It… it is?!
+        Moderator: It... it is?!
         Alice: Just take a look at this, the Second Amendment! People have the right to bear arms,and that means keeping guns!
         <animation id="Betty" animation="Betty_betty_sweat" />
         Betty: What?! My debate preparation team never mentioned that!
         Alice: It's pretty basic knowledge, Ms. Blue, I thought you would have known that. Especially with your years of experience.
         <animation id="Alice" animation="Alice_mc_talk_normal" />
-        Alice: (Ms. Blue looks distracted… is she flipping through papers? But we weren't supposed to have any prewritten notes on the stage. Just when did she get those?)
+        Alice: (Ms. Blue looks distracted... is she flipping through papers? But we weren't supposed to have any prewritten notes on the stage. Just when did she get those?)
         Moderator: Ahem, alright. Thank you ladies for your introduction.
         <pausemusic/>
         <animation id="Alice" animation="Alice_mc_sweat" />
