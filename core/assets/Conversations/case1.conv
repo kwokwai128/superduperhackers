@@ -152,7 +152,7 @@
         <animation id="Betty" animation="Betty_betty_serious" />
         Betty: Yes! It takes years for anything to get done. We need to cut more and more red tape!
         Betty: I'll even cut the red tape myself.
-        Alice: (I think she's serious…)
+        Alice: (I think she's serious...)
         <animation id="Betty" animation="Betty_betty_talk" />
         <changebranch branch="statement1"/>
     </branch>
@@ -164,7 +164,7 @@
         Betty: You think kids should die!?
         Alice: Of course not! But how do you plan to confiscate everyone's gun?
         Betty: Well, they ought to be arrested if they don't comply!
-        Alice: (Something doesn't seem right…)
+        Alice: (Something doesn't seem right...)
         <animation id="Alice" animation="Alice_mc_normal"/>
         <animation id="Betty" animation="Betty_betty_talk"/>
         <changebranch branch="statement2"/>
