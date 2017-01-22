@@ -40,7 +40,7 @@ public class MusicManager {
         stopMusic();
         currentMusic = music;
         currentMusicName = name;
-        music.setVolume(0.5f);
+        music.setVolume(0.3f);
         music.play();
         setLooping(loops);
     }

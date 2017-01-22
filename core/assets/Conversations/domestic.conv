@@ -1,0 +1,225 @@
+<conversation xmlns="urn:conversations">
+    <branch name="default">
+        <changebranch branch="introduction"/>
+        <assign>
+            delay <delay time="1" skippable="true"/>
+            intense <sound id="intense.wav"/>
+        </assign>
+    </branch>
+
+    <branch name="introduction">
+
+        Moderator: Alright, let's move on to the exciting world of domestic policy. Polls show that domestic
+        policy is one of the most important issues for Americans, so let's be thorough. Ms. Blue, please, go ahead.
+        <music id="discussion" loop="true"/>
+        <changebranch branch="bill"/>
+    </branch>
+
+    <branch name="bill">
+        <animation id="Moderator" animation="Wolf_Wolf_looking"/>
+        <animation id="Betty" animation="Betty_betty_angry"/>
+        Betty: This last year has been a tough one for many Americans, but frankly protesters are acting out and it just isn't acceptable.
+        In order to improve domestic policy, Americans must be forced to comply! Also, our immigration policy is simply outrageous!
+        <animation id="Betty" animation="Betty_betty_serious"/>
+        Betty: The NFL should punish any football player from kneeling while the national anthem is being performed. It is unpatriotic and extremely rude to all our 
+        veterans and people who have fought for our country. The NFL should take swift action against these acts!
+        <animation id="Betty" animation="Betty_betty_serious"/>
+        Betty: Speaking of unpatriotic actions, burning the American flag should be illegal. It is shameful to see our country's pride and
+        symbol go up in flames. Once again, it is disrespectful to our veterans and to the people of the United States!
+        <animation id="Betty" animation="Betty_betty_talk"/>
+        Betty: As more and more immigrants flood to the United States, we should open our borders  even more to all refugees and any citizens of the
+        world seeking shelter to the United States! The United States welcomes immigrants throughout the world and should continue to do so by
+        making our borders completely open.
+        Alice: (Is she being serious...)
+        : (Alright, just like before! Time to show her why her plans won't work!)
+        <changebranch branch="statement1"/>
+    </branch>
+
+    <branch name="statement1">
+        <animation id="Betty" animation="Betty_betty_angry"/>
+        !Betty: This last year has been a tough one for many Americans, but frankly protesters are acting out and it just isn't acceptable.
+        In order to improve domestic policy, Americans must be forced to comply! Also, our immigration policy is simply outrageous!
+        <choices>
+            Press:
+            <changebranch branch="press1"/>
+            Evidence:
+            <evidence language="Groovy" variable="evidence"/>
+            <if language="Groovy"> {evidence != -1}
+                <changebranch branch="wrong answer"/>
+            </if>
+            <changebranch branch="statement1"/>
+            Next:
+            <changebranch branch="statement2"/>
+        </choices>
+    </branch>
+
+    <branch name="statement2">
+        <animation id="Betty" animation="Betty_betty_serious"/>
+        !Betty: The NFL should punish any football player from kneeling while the national anthem is being performed. It is unpatriotic and extremely rude to all our
+        veterans and people who have fought for our country. The NFL should take swift action against these acts!
+        <choices>
+            Press:
+            <changebranch branch="press2"/>
+            Evidence:
+            <evidence language="Groovy" variable="evidence"/>
+            <if language="Groovy"> {evidence != -1}
+                <if language="Groovy"> {evidence == 2}
+                    <changebranch branch="nfl wrong"/>
+                </if>
+                <changebranch branch="wrong answer"/>
+            </if>
+            <changebranch branch="statement2"/>
+            Previous:
+            <changebranch branch="statement1"/>
+            Next:
+            <changebranch branch="statement3"/>
+        </choices>
+    </branch>
+
+    <branch name="statement3">
+        <animation id="Betty" animation="Betty_betty_serious"/>
+        !Betty: Speaking of unpatriotic actions, burning the American flag should be illegal. It is shameful to see our country's pride and
+        symbol go up in flames. Once again, it is disrespectful to our veterans and to the people of the United States!
+        <choices>
+            Press:
+            <changebranch branch="press3"/>
+            Evidence:
+            <evidence language="Groovy" variable="evidence"/>
+            <if language="Groovy"> {evidence != -1}
+                <if language="Groovy"> {evidence == 3}
+                    <changebranch branch="right answer"/>
+                </if>
+                <if language="Groovy"> {evidence == 2}
+                    <animation id="Alice" animation="Alice_mc_normal"/>
+                    Alice: (I don't think this alone proves my point... I need something more decisive!)
+                    <changebranch branch="statement3"/>
+                </if>
+                <changebranch branch="wrong answer"/>
+            </if>
+            <changebranch branch="statement3"/>
+            Previous:
+            <changebranch branch="statement2"/>
+            Next:
+            <changebranch branch="statement4"/>
+        </choices>
+    </branch>
+
+    <branch name="statement4">
+        <animation id="Betty" animation="Betty_betty_talk"/>
+        !Betty: As more and more immigrants flood to the United States, we should open our borders even more to all refugees and any citizens of the
+        world seeking shelter to the United States! The United States welcomes immigrants throughout the world and should continue to do so by
+        making our borders completely open.
+        <choices>
+            Press:
+            <changebranch branch="press4"/>
+            Evidence:
+            <evidence language="Groovy" variable="evidence"/>
+            <if language="Groovy"> {evidence != -1}
+                <changebranch branch="wrong answer"/>
+            </if>
+            <changebranch branch="statement4"/>
+            Previous:
+            <changebranch branch="statement3"/>
+        </choices>
+    </branch>
+
+    <branch name="press1">
+        <animation id="Alice" animation="Alice_mc_sweat"/>
+        Alice: How exactly do you intend to make Americans comply? You can't just arrest them all!
+        <animation id="Betty" animation="Betty_betty_talk"/>
+        Betty: Arrest them all? Interesting possibility...
+        Alice: What have I done...
+        <changebranch branch="statement1"/>
+    </branch>
+
+    <branch name="press2">
+        <animation id="Alice" animation="Alice_mc_talk_normal"/>
+        Alice: You didn't strike me as the type to watch football, Ms. Blue.
+        <animation id="Betty" animation="Betty_betty_talk"/>
+        Betty: Well, I am more of a golf person. But seeing people tackle each other really stirs something in my heart!
+        <animation id="Alice" animation="Alice_mc_smug"/>
+        Alice: Let me guess, you're a hockey fan too?
+        <animation id="Betty" animation="Betty_betty_smug"/>
+        Betty: Wow, are you some kind of psychic? Actually, you do look kind of like that Pocket Monster, Mr. Mime.
+        <animation id="Alice" animation="Alice_mc_sweat"/>
+        Alice: Did she just say that on national TV? She just said that on national TV.
+        <changebranch branch="statement2"/>
+    </branch>
+
+    <branch name="press3">
+        <animation id="Alice" animation="Alice_mc_talk_normal"/>
+        Alice: You don't think burning flags helps people speak out against the government? It sounds exactly like the type of thing our founding fathers would have done.
+        <animation id="Betty" animation="Betty_betty_smug"/>
+        Betty: But when I'm president, no Americans will want to speak out against the government!
+        <animation id="Moderator" animation="Wolf_Wolf_looking"/>
+        Moderator: What an inspiring message of hope we're hearing here tonight!
+        <animation id="Alice" animation="Alice_mc_sweat"/>
+        Alice: But...!
+        <animation id="Moderator" animation="Wolf_Wolf"/>
+        Moderator: Next question, please.
+        <changebranch branch="statement3"/>
+    </branch>
+
+    <branch name="press4">
+        <animation id="Alice" animation="Alice_mc_talk_normal"/>
+        Alice: Don't you think making our border open would be dangerous? All sorts of people could get in!
+        <animation id="Betty" animation="Betty_betty_smug"/>
+        Betty: I choose to believe that people are universally good and that they will only help America prosper.
+        <animation id="Alice" animation="Alice_mc_angry"/>
+        Alice: Ms. Blue, earlier you were saying terrorists should be tortured and their families killed. Now you're supporting policies that would help them get into America. Isn't there a bit of a discrepancy there?
+        Betty: Stop thinking so small, Ms. Wonder. A few terrorists is a small price to pay for all the good it would do. What about all of the refugees across the world that could benefit from my policy?
+        <animation id="Moderator" animation="Wolf_Wolf_looking"/>
+        Moderator: Thinking big! No wonder millions are obsessed with Betty Blue!
+        <animation id="Alice" animation="Alice_mc_sweat"/>
+        Alice: Apparently including Wolf himself.
+
+        <changebranch branch="statement4"/>
+    </branch>
+
+    <branch name="wrong answer">
+        <animation id="Alice" animation="Alice_mc_smug"/>
+        Alice: Nice try, Ms. Blue, but I've found the flaws in your outrageous views! That's unconstitutional!
+        <animation id="Betty" animation="Alice_mc_smug"/>
+        Betty: Now, now. Just because you disagree doesn't mean it's not allowed.
+        <animation id="Alice" animation="Alice_mc_sweat"/>
+        Alice: That's true... I think I'm on the wrong track here.
+        <changebranch branch="statement1"/>
+    </branch>
+
+    <branch name="nfl wrong">
+        <animation id="Alice" animation="Alice_mc_smug"/>
+        Alice: I'm sorry, Ms. Blue, but my friend the First Amendment says otherwise!
+        <animation id="Betty" animation="Betty_betty_talk"/>
+        Betty: Oh really now? Please, go on.
+        Alice: Kneeling during the national anthem is free speech! You can't punish players for exercising their rights!
+        <animation id="Betty" animation="Betty_betty_smug"/>
+        Betty: You're right, of course, but what you fail to grasp is that I won't be the one punishing them. I'm simply calling on NFL owners to do so.
+        Your precious little First Amendment may stop the Federal Government and states from preventing free speech, but the NFL isn't the government!
+        <animation id="Alice" animation="Alice_mc_sweat"/>
+        Alice: (I hate to say it, but she's right. I better think things over again.)
+        <changebranch branch="statement2"/>
+    </branch>
+
+    <branch name="right answer">
+        <music id="cornered" loop="true"/>
+        <animation id="Alice" animation="Alice_mc_smug"/>
+        Alice: I've got you now! Take a look at this, @c{intense} Ms. Blue!
+        <animation id="Betty" animation="Betty_betty_sweat"/>
+        Betty: What am I looking at, besides your pathetic excuse for clothing?
+        Alice: What you should really be looking at is this landmark court case, Texas v Johnson!
+        Betty: Landmark? I've never heard of it.
+        Alice: That doesn't surprise me. If you had known it, you would also know the critical mistake you made.
+        Betty: Why you...!
+        <animation id="Alice" animation="Alice_mc_talk_normal"/>
+        Alice: In 1988, the Supreme Court handed down a ruling on an incident where Gregory Lee Johnson was convicted after burning a flag in protest. The Supreme Court decided that the flag burning was a form of protest and free speech.
+        Betty: You don't mean...!
+        <animation id="Alice" animation="Alice_mc_smug"/>
+        Alice: That's right, Ms. Blue! Your plan to make flag burning illegal is a violation of free speech! Your unconstitutional policy will never happen, not with Texas v Johnson standing!
+        Betty: Nooooooooooooooooo!
+        Alice: (Yes! I damaged her credibility again! Just a little more now...! Wait, why does she have more papers on her desk?)
+        Moderator: Well, that was certainly a stunning turn of events. I think we better move on now...
+        <changeconv conv="two.conv"/>
+    </branch>
+
+
+</conversation>

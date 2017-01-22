@@ -27,7 +27,7 @@
 
         Moderator: (... We're happy to be here today with the two leading voices of our nation and hear their views on
         various controversial topics...
-        :...Please welcome presidential candidates Betty Blue and Alice _____!) *cheering*
+        :...Please welcome presidential candidates Betty Blue and Alice Wonder!) *cheering*
 
 
         Alice: I've spent my entire life preparing for this moment. I'm a little nervous.
@@ -41,10 +41,13 @@
 
         Moderator: Thank you Senator Alice for your introduction.
 
-        <name id="Alice" displayname="Alice LastName"/>
+        <name id="Alice" displayname="Alice Wonder"/>
         Alice: Thank you, Mr. Wolf.
 
-        Moderator: Mrs. Betty, you may begin your introduction.
+        Moderator: Ms. Betty, you may begin your introduction.
+
+        <changeconv conv="domestic.conv"/>
+
         <music id="discussion" loop="true"/>
         <changebranch branch="bill"/>
     </branch>
@@ -162,7 +165,7 @@
         Betty: Didn't you hear me? Jobs, money, and fuel to the US economy. Not that a youngster like you would understand anything about jobs and money.
         Alice: I'm 35 years old…
         Betty: And I'm rich! See the difference?
-        Moderator: She's right Ms. Alice, there is a difference!
+        Moderator: She's right Ms. Wonder, there is a difference!
         Alice: That stings Wolf...
         <changebranch branch="statement3"/>
     </branch>
@@ -170,7 +173,7 @@
     <branch name="press4">
         Alice: Ms. Blue, you've been working in the federal government for many years now. How do we know YOU aren't one of those corrupt politicians?
         Moderator: Gasp! Ms. Blue... is that true?!
-        Betty: You know what, Ms. ALICE_LAST_NAME, I'm taking that as a compliment.
+        Betty: You know what, Ms. Wonder, I'm taking that as a compliment.
         Alice: ...How exactly...
         Betty: I DO have years of federal government experience. Just the other day I was playing a spectacular round of golf with Senator Blake. Have you played golf with Senator Blake? Or any Senator for that matter?
         Moderator: Great point, Ms. Blue! Your golf game is on point!
