@@ -291,6 +291,20 @@ public class GUIManager {
 	private static void initEvidence() {
         allEvidence[0] = new Array<>(true, 5);
         allEvidence[1] = new Array<>(true, 5);
+        allEvidence[0].add(new Evidence("First Amendment",
+                "The Federal government, as well as the states, may not infringe on the people’s rights to press, free speech, assembly, petition, and to practice any religion.", 2,
+                "https://en.wikipedia.org/wiki/First_Amendment_to_the_United_States_Constitution" ));
+
+        allEvidence[0].add(new Evidence("Second Amendment",
+                "People have the right to keep a weapon and to use it to protect themselves.", 0,
+                "https://en.wikipedia.org/wiki/Second_Amendment_to_the_United_States_Constitution"));
+        allEvidence[0].add(new Evidence("Third Amendment", "Soldiers can not stay in people’s houses' without their consent.", 9, "https://en.wikipedia.org/wiki/Third_Amendment_to_the_United_States_Constitution"));
+        allEvidence[0].add(new Evidence("Fourth Amendment",
+                "The government cannot arrest a person, or search their property, unless there is \"probable cause\" that a crime has been committed.", 9, "https://en.wikipedia.org/wiki/Fourth_Amendment_to_the_United_States_Constitution"));
+        allEvidence[0].add(new Evidence("Fifth Amendment",
+                "The Federal government must follow the due process of the law before punishing a person and that all citizens had the right to a trial by jury. It also states that a person cannot be put on trial twice for the same crime (the Double Jeopardy Clause) or that person on trial for a crime does not have to testify against themselves in court, known as \"Pleading the 5th\".",
+                9, "https://en.wikipedia.org/wiki/Fifth_Amendment_to_the_United_States_Constitution"));
+        
         allEvidence[1].add(new Evidence("New York Times Co. v Sullivan", "Hello world", 3, "https://en.wikipedia.org/wiki/New_York_Times_Co._v._Sullivan"));
         allEvidence[1].add(new Evidence("Roe v Wade", "desc", 1, "https://en.wikipedia.org/wiki/Roe_v._Wade"));
         allEvidence[0].add(new Evidence("1st Amendment", "test", 2, "https://en.wikipedia.org/wiki/First_Amendment_to_the_United_States_Constitution"));
