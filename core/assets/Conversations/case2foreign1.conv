@@ -121,7 +121,7 @@
         <animation id="Betty" animation="Betty_betty_smug" />
         Betty: Poorer nations should be thankful that we’ve stayed in NATO this long. Estonians, Latvians, Lithuanians,
         Croatians, and Albanians should learn to defend themselves,
-        and when I’m president, they’ll have to!
+        and when I'm president, they'll have to!
         <changebranch branch="statement1"/>
     </branch>
 
@@ -171,7 +171,7 @@
         Betty: Is it now? France, India and the UK have nukes and anything can happen.  I've met with the President
         about our nuclear arsenal.
         Alice: (What!? She has met with the President!?)
-        Alice (Though a crazy, it doesn't sound illegal if the President was involved.)
+        Alice: (Though a crazy, it doesn't sound illegal if the President was involved.)
         <changebranch branch="statement4"/>
     </branch>
 
@@ -214,7 +214,7 @@
         Alice: (You can't be serious...)
         Moderator: Ms. Blue has a point but Ms. Alice you have made a serious note about Ms. Blue's plan. We will let the American people decide.
         <pausemusic/>
-        Alice: (Damn! I was close but I think I got brownie points for pointing out her plan could have flaws)
+        Alice: (Damn! I was close but I think I got brownie points for pointing out her plan could have flaws.)
         <animation id="Moderator" animation="Wolf_Wolf_looking" />
         Moderator: On to the next topic, domestic policies!)
         <changeconv conv="domestic.conv"/>
