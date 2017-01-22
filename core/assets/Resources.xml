@@ -80,11 +80,17 @@
         !talksoundmale.wav
         new sound for this file
         test
+        ///////////
+        !cheering.wav
     </sounds>
 
     <characters>
         <character id="Detective" name="Detective" sound="talksoundmale.wav"/>
         <character id="Librarian" name="???" sound="talksoundmale.wav"/>
         <character id="Buddy" name="YOLO SWAGGINS"  sound="talksoundmale.wav"/>
+        <character id="Alice" name="???" sound="talksoundfemale.wav"/>
+        <character id="Betty" name="Betty LastName" sound="talksoundfemale.wav"/>
+        <character id="Moderator" name="Moderator Wolf" sound="talksoundmale.wav"/>
+        <character id="Distant" name="Distant Voice" sound="talksoundfemale.wav"/>
     </characters>
 </resources>
