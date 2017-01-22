@@ -226,7 +226,7 @@
         <animation id="Moderator" animation="Wolf_Wolf_looking"/>
         Moderator: Ahem, thank you ladies for this insightful discussion.
         <pausemusic/>
-        <changeconv conv="case2.conv"/>
+        <changeconv conv="conclusion.conv"/>
     </branch>
 
 

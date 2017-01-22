@@ -134,7 +134,7 @@
         <animation id="Betty" animation="Betty_betty_smug" />
         Betty: Oh, I do.
         <animation id="Alice" animation="Alice_mc_sweat" />
-        Alice: (That’s insane!)
+        Alice: (That's insane!)
         Alice: You want to harm the terrorists’ families and friends?
         <animation id="Betty" animation="Betty_betty_serious" />
         Betty: Of course. Terrorists and their families should be punished.
@@ -149,9 +149,9 @@
         Moderator: I'd love to go on an island vacation right now.
         <animation id="Betty" animation="Betty_betty_smug" />
         Betty: Not in the South China Sea, you don’t.
-        Moderator: Why’s that?
+        Moderator: Why's that?
         <animation id="Alice" animation="Alice_mc_sweat" />
-        Alice: That area is riddled with conflict, Mr. Blitzer. It’s incredibly unstable.
+        Alice: That area is riddled with conflict, Mr. Blitzer. It's incredibly unstable.
         Moderator: Sigh, that's disappointing.
         <animation id="Betty" animation="Betty_betty_talk" />
         Betty: Don't worry Wolf, after this debate we can take a my private jet to my beautiful private island on the
@@ -193,13 +193,13 @@
     <branch name="right answer">
         <music id="cornered" loop="true"/>
         <animation id="Alice" animation="Alice_mc_smug" />
-        Alice: Ms. Blue, someone on your debate team is getting fired because of your deadly proposal @c{intense} unconstitutional!
+        Alice: Ms. Blue, someone on your debate team is getting fired because your deadly proposal is @c{intense} unconstitutional!
         Moderator: What!? You mean we can't kill terrorists families?
         Alice: May I point your attention to the Eighth Amendment! No cruel and unusual punishments can be inflicted by the government!
         <animation id="Betty" animation="Betty_betty_sweat" />
         Betty: What?! It doesn't sound unusual to me!
         Alice: It's pretty basic knowledge, Ms. Blue, I thought you would have known that. Especially with your years of experience.
-        Alice: (Ms. Blue looks distracted… is she flipping through papers again? Something doesn't seem right...)
+        Alice: (Ms. Blue looks distracted... is she flipping through papers again? Something doesn't seem right...)
         Betty: Ah ha!
         Moderator: Is something wrong Ms. Blue?
         Betty: Though it may violate the 8th Amendment, it isn't exactly @c{intense} unconstitutional!
