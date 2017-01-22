@@ -198,6 +198,7 @@
         <music id="BettyTheme" loop="true" />
         <animation id="Alice" animation="Alice_mc_sweat" />
         Alice: WHAT!?
+        <animation id="Moderator" animation="Wolf_Wolf_looking" />
         Moderator: No way!
         <animation id="Betty" animation="Betty_betty_smug" />
         Betty: Technically it may be cruel and unusual, the CIA has continued to exercise these practices! There aren't any court cases or laws stating

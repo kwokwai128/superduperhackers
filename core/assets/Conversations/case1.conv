@@ -46,7 +46,7 @@
 
         Moderator: Ms. Betty, you may begin your introduction.
 
-        <changeconv conv="domestic.conv"/>
+        <changeconv conv="case2foreign1.conv"/>
 
         <music id="discussion" loop="true"/>
         <changebranch branch="bill"/>
@@ -206,7 +206,7 @@
         Moderator: We may now begin the debate. First on the chopping block is foreign policy. Betty, you may begin.
         Alice: (What about me???)
         Alice: (It looks like the only way to get my foot in the door is to find the flaws in Betty's stances.)
-        <changeconv conv="case2.conv"/>
+        <changeconv conv="case2foreign1.conv"/>
     </branch>
 
 </conversation>
