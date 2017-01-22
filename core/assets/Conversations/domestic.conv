@@ -28,7 +28,7 @@
         symbol go up in flames. Once again, it is disrespectful to our veterans and to the people of the United States!
         <animation id="Betty" animation="Betty_betty_talk"/>
         Betty: As more and more immigrants flood to the United States, we should open our borders  even more to all refugees and any citizens of the
-        world seeking shelter to the United States! The United States welcomes immigrants throughout the world and should continue to do so by
+        world seeking shelter to the United States! The United States welcomes immigrants and should continue to do so by
         making our borders completely open.
         Alice: (Is she being serious...)
         : (Alright, just like before! Time to show her why her plans won't work!)
@@ -107,7 +107,7 @@
     <branch name="statement4">
         <animation id="Betty" animation="Betty_betty_talk"/>
         !Betty: As more and more immigrants flood to the United States, we should open our borders even more to all refugees and any citizens of the
-        world seeking shelter to the United States! The United States welcomes immigrants throughout the world and should continue to do so by
+        world seeking shelter to the United States! The United States welcomes immigrants and should continue to do so by
         making our borders completely open.
         <choices>
             Press:
@@ -179,7 +179,7 @@
     <branch name="wrong answer">
         <animation id="Alice" animation="Alice_mc_smug"/>
         Alice: Nice try, Ms. Blue, but I've found the flaws in your outrageous views! That's unconstitutional!
-        <animation id="Betty" animation="Alice_mc_smug"/>
+        <animation id="Betty" animation="Betty_betty_smug"/>
         Betty: Now, now. Just because you disagree doesn't mean it's not allowed.
         <animation id="Alice" animation="Alice_mc_sweat"/>
         Alice: That's true... I think I'm on the wrong track here.
@@ -206,7 +206,7 @@
         Alice: I've got you now! Take a look at this, @c{intense} Ms. Blue!
         <animation id="Betty" animation="Betty_betty_sweat"/>
         Betty: What am I looking at, besides your pathetic excuse for clothing?
-        Alice: What you should really be looking at is this landmark court case, Texas v Johnson!
+        Alice: What you should really be looking at is this landmark court case, Texas v. Johnson!
         Betty: Landmark? I've never heard of it.
         Alice: That doesn't surprise me. If you had known it, you would also know the critical mistake you made.
         Betty: Why you...!
@@ -214,7 +214,7 @@
         Alice: In 1988, the Supreme Court handed down a ruling on an incident where Gregory Lee Johnson was convicted after burning a flag in protest. The Supreme Court decided that the flag burning was a form of protest and free speech.
         Betty: You don't mean...!
         <animation id="Alice" animation="Alice_mc_smug"/>
-        Alice: That's right, Ms. Blue! Your plan to make flag burning illegal is a violation of free speech! Your unconstitutional policy will never happen, not with Texas v Johnson standing!
+        Alice: That's right, Ms. Blue! Your plan to make flag burning illegal is a violation of free speech! Your unconstitutional policy will never happen, not with Texas v. Johnson standing!
         Betty: Nooooooooooooooooo!
         Alice: (Yes! I damaged her credibility again! Just a little more now...! Wait, why does she have more papers on her desk?)
         Moderator: Well, that was certainly a stunning turn of events. I think we better move on now...
