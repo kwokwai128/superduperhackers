@@ -102,4 +102,9 @@ public class LuaScriptManager implements ScriptManager {
         }
     }
 
+    @Override
+    public void setValue(String name, int value) {
+        globals.set(name, value);
+    }
+
 }

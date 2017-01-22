@@ -167,6 +167,9 @@ public class ConversationController implements Controllable {
      * DELTA TIME is the time elapsed since the previous frame.
      */
     public void update(float deltaTime) {
+        if (currentConversation == null) {
+            return;
+        }
         if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) {
             SaveManager.save(Gdx.files.local("Saves/test2.bin")); //todo remove
         }
@@ -414,6 +417,12 @@ public class ConversationController implements Controllable {
         List<ConversationCommand> commands = choiceCommands[choice];
         insertCommands(commands);
         currentCommand.complete(CompleteEvent.choice());
+    }
+
+    public void present(int id) {
+        if (currentCommand != null) {
+            currentCommand.complete(CompleteEvent.present(id));
+        }
     }
 
     /** Tags Code */

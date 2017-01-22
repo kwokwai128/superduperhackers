@@ -45,6 +45,7 @@ public class ConversationLoader {
         classMapping.put("debug", DebugCommand.class);
         classMapping.put("delay", DelayCommand.class);
         classMapping.put("script", ExecuteScriptCommand.class);
+        classMapping.put("evidence", EvidenceCommand.class);
         classMapping.put("text", MessageCommand.class);
         classMapping.put("music", PlayMusicCommand.class);
         classMapping.put("sound", PlaySoundCommand.class);

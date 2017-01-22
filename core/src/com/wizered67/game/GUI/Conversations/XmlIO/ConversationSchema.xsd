@@ -41,6 +41,7 @@
                 <xs:element type="ifType" name="if" maxOccurs="unbounded"/>
                 <xs:element type="bgType" name="bg" maxOccurs="unbounded"/>
                 <xs:element type="changeConversationType" name="changeconv" maxOccurs="unbounded"/>
+                <xs:element type="evidenceType" name="evidence" maxOccurs="unbounded"/>
             </xs:choice>
         </xs:sequence>
     </xs:group>
@@ -153,5 +154,10 @@
 
     <xs:complexType name="changeConversationType">
         <xs:attribute name="conv" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="evidenceType">
+        <xs:attribute name="language" type="languages" use="required"/>
+        <xs:attribute name="variable" type="xs:string" use="required"/>
     </xs:complexType>
 </xs:schema>

@@ -20,11 +20,12 @@
 
         <init language="Groovy">
             work 0
+            evidence 0
         </init>
         <bg id="testbackground.png"/>
         <sound id="intense.wav"/>
         <music id="crossexamination.mp3" loop="false"/>
-        <changebranch branch="main branch"/>
+        <changebranch branch="evidence"/>
     </branch>
 
     <branch name="main branch">
@@ -100,6 +101,16 @@
         his lies once and for all!)
         <visible id="Librarian" visible="false" fade="1.5"/>
         <changeconv conv="two.conv"/>
+    </branch>
+
+    <branch name="evidence">
+        <evidence language="Groovy" variable="evidence"/>
+        <if language="Groovy">{evidence == 1}
+        Detective: You chose right!
+        </if>
+        <if language="Groovy">{evidence != 1}
+            Detective: Wrong!
+        </if>
     </branch>
 
 </conversation>

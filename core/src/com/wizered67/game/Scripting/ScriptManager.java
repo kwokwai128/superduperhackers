@@ -30,4 +30,5 @@ public interface ScriptManager {
     Map<String, Object> saveMap();
     /** Reloads variables from the save map between variable name and value MAP. */
     void reload(Map<String, Object> map);
+    void setValue(String name, int value);
 }

@@ -18,7 +18,7 @@ public class Constants {
 	public final static String GAME_NAME = "Visual Novel";
 	public final static int DEFAULT_WIDTH = 800; //1024
 	public final static int DEFAULT_HEIGHT = 600; //576
-	public final static boolean RESIZABLE = true;
+	public final static boolean RESIZABLE = false;
 	public final static int REGULAR_FONT_SIZE = Gdx.app.getType() == Application.ApplicationType.Android ? (20) : 36;
 	public final static float VIRTUAL_WIDTH = 400; //400
 	public final static float VIRTUAL_HEIGHT = 240; //240

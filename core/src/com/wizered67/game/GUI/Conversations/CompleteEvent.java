@@ -23,6 +23,8 @@ public class CompleteEvent {
     /** A CompleteEvent for when all current text has been displayed. */
     private static final CompleteEvent TEXT_END_EVENT = new CompleteEvent(Type.TEXT);
 
+    private static final CompleteEvent PRESENT_EVENT = new CompleteEvent(Type.PRESENT);
+
     public CompleteEvent(Type t) {
         this(t, null);
     }
@@ -53,7 +55,12 @@ public class CompleteEvent {
         return TEXT_END_EVENT;
     }
 
+    public static CompleteEvent present(int id) {
+        PRESENT_EVENT.data = id;
+        return PRESENT_EVENT;
+    }
+
     public enum Type {
-        INPUT, CHOICE, ANIMATION_END, FADE_END, TEXT
+        INPUT, CHOICE, ANIMATION_END, FADE_END, TEXT, PRESENT
     }
 }

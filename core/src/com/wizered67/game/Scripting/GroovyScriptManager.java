@@ -130,4 +130,9 @@ public class GroovyScriptManager implements ScriptManager {
             binding.setProperty(key, map.get(key));
         }
     }
+
+    @Override
+    public void setValue(String name, int value) {
+        binding.setVariable(name, value);
+    }
 }

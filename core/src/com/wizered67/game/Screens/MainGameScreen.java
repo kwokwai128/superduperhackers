@@ -12,6 +12,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.kotcrab.vis.ui.VisUI;
 import com.wizered67.game.GUI.GUIManager;
 import com.wizered67.game.GameManager;
 import com.wizered67.game.Inputs.MyInputProcessor;
@@ -140,5 +141,6 @@ public class MainGameScreen implements Screen {
         font.dispose();
         batch.dispose();
         shapes.dispose();
+        VisUI.dispose();
     }
 }
