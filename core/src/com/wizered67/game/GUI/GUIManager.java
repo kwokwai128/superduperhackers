@@ -242,7 +242,7 @@ public class GUIManager {
                 }
             }
         });
-        column.add(backButton).minWidth(100).minHeight(40).pad(20, 0, 0, 0).colspan(3);
+        column.add(backButton).minWidth(100).minHeight(40).pad(5, 0, 0, 0).colspan(3);
 
         presentButton = new TextButton("Present", textButtonStyle);
         presentButton.addListener(new ChangeListener() {
@@ -289,14 +289,14 @@ public class GUIManager {
 	}
 
 	private static void initEvidence() {
-        allEvidence[0] = new Array<>(true, 5);
+        allEvidence[0] = new Array<>(true, 10);
         allEvidence[1] = new Array<>(true, 5);
         allEvidence[0].add(new Evidence("First Amendment",
                 "The Federal government, as well as the states, may not infringe on the people’s rights to press, free speech, assembly, petition, and to practice any religion.", 2,
                 "https://en.wikipedia.org/wiki/First_Amendment_to_the_United_States_Constitution" ));
 
         allEvidence[0].add(new Evidence("Second Amendment",
-                "People have the right to keep a weapon and to use it to protect themselves.", 0,
+                "People have the right to keep a weapon and use it to protect themselves.", 0,
                 "https://en.wikipedia.org/wiki/Second_Amendment_to_the_United_States_Constitution"));
         allEvidence[0].add(new Evidence("Third Amendment", "Soldiers can not stay in people’s houses' without their consent.", 9, "https://en.wikipedia.org/wiki/Third_Amendment_to_the_United_States_Constitution"));
         allEvidence[0].add(new Evidence("Fourth Amendment",
@@ -304,11 +304,19 @@ public class GUIManager {
         allEvidence[0].add(new Evidence("Fifth Amendment",
                 "The Federal government must follow the due process of the law before punishing a person and that all citizens had the right to a trial by jury. It also states that a person cannot be put on trial twice for the same crime (the Double Jeopardy Clause) or that person on trial for a crime does not have to testify against themselves in court, known as \"Pleading the 5th\".",
                 9, "https://en.wikipedia.org/wiki/Fifth_Amendment_to_the_United_States_Constitution"));
-        
-        allEvidence[1].add(new Evidence("New York Times Co. v Sullivan", "Hello world", 3, "https://en.wikipedia.org/wiki/New_York_Times_Co._v._Sullivan"));
-        allEvidence[1].add(new Evidence("Roe v Wade", "desc", 1, "https://en.wikipedia.org/wiki/Roe_v._Wade"));
-        allEvidence[0].add(new Evidence("1st Amendment", "test", 2, "https://en.wikipedia.org/wiki/First_Amendment_to_the_United_States_Constitution"));
-        allEvidence[0].add(new Evidence("2nd Amendment", "The Second Amendment (Amendment II) to the United States Constitution protects the right of the people to keep and bear arms and was adopted on December 15, 1791, as part of the first ten amendments contained in the Bill of Rights. The Supreme Court of the United States has ruled that the right belongs to individuals, while also ruling that the right is not unlimited and does not prohibit all regulation of either firearms or similar devices. State and local governments are limited to the same extent as the federal government from infringing this right per the incorporation of the Bill of Rights.", 0, "https://en.wikipedia.org/wiki/Second_Amendment_to_the_United_States_Constitution"));
+        allEvidence[0].add(new Evidence("Sixth Amendment", "A person has the right to be told what crimes they are charged with, have a speedy and fair trial by a jury, to have a lawyer during the trial and the right to question witnesses against them and have the right to get their own witnesses to testify for them.", 9, "https://en.wikipedia.org/wiki/Sixth_Amendment_to_the_United_States_Constitution"));
+        allEvidence[0].add(new Evidence("Seventh Amendment", "People who are sued have to a jury trial for civil cases. ", 9, "https://en.wikipedia.org/wiki/Seventh_Amendment_to_the_United_States_Constitution"));
+        allEvidence[0].add(new Evidence("Eighth Amendment", "The government cannot demand excessive bail, excessive fines, or inflict any cruel and unusual punishment.", 1, "https://en.wikipedia.org/wiki/Eighth_Amendment_to_the_United_States_Constitution"));
+        allEvidence[0].add(new Evidence("Ninth Amendment", "The Constitution does not include all of the rights of the people and the states. It provides reassurance that rights not listed could not be taken away and that the adoption of Constitution itself, and its construction, would limit the powers of government.", 9, "https://en.wikipedia.org/wiki/Ninth_Amendment_to_the_United_States_Constitution"));
+        allEvidence[0].add(new Evidence("Tenth Amendment", "Any powers that the Constitution does not give to the government, belong to the states and  the people, excluding the powers that the Constitution says the states cannot have.", 9, "https://en.wikipedia.org/wiki/Tenth_Amendment_to_the_United_States_Constitution"));
+
+        allEvidence[1].add(new Evidence("New York Times v. Sullivan", "The Court held that the First Amendment protects the publication of all statements, even false ones, about the conduct of public officials except when statements are made with actual malice (with knowledge that they are false or in reckless disregard of their truth or falsity).", 9, "https://www.oyez.org/cases/1963/39"));
+        allEvidence[1].add(new Evidence("UC Regents v. Bakke", "Race can be used as part of the criteria for admissions, but the use of quotas is unconstitutional.", 4, "https://www.oyez.org/cases/1979/76-811"));
+        allEvidence[1].add(new Evidence("Roe v. Wade", "The Court held that a woman's right to an abortion fell within the right to privacy protected by the Fourteenth Amendment. The decision gave a woman total autonomy over the pregnancy during the first trimester and defined different levels of state interest for the second and third trimesters. ", 9, "https://www.oyez.org/cases/1971/70-18"));
+        allEvidence[1].add(new Evidence("Texas v. Johnson", "Johnson's burning of a flag was protected expression under the First Amendment. The Court found that Johnson's actions fell into the category of expressive conduct and had a distinctively political nature. The fact that an audience takes offense to certain ideas or expression, the Court found, does not justify prohibitions of speech. ", 3, "https://www.oyez.org/cases/1988/88-155"));
+        allEvidence[1].add(new Evidence("Mapp v. Ohio", "The Court declared that \"all evidence obtained by searches and seizures in violation of the Constitution is, by [the Fourth Amendment], inadmissible in a state court.\" Mapp had been convicted on the basis of illegally obtained evidence. This was an historic -- and controversial -- decision. It placed the requirement of excluding illegally obtained evidence from court at all levels of the government. ", 9, "https://www.oyez.org/cases/1960/236"));
+        //allEvidence[1].add(new Evidence("New York Times Co. v Sullivan", "Hello world", 3, "https://en.wikipedia.org/wiki/New_York_Times_Co._v._Sullivan"));
+        //allEvidence[1].add(new Evidence("Roe v Wade", "desc", 1, "https://en.wikipedia.org/wiki/Roe_v._Wade"));
     }
 
 	private static void hideEvidence() {
