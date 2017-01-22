@@ -15,7 +15,7 @@
         <animation id="Betty" animation="Betty_betty_serious"/>
         Betty: The US does not have to police the world. It is shameful that other governments in NATO refuse to
         pay their fair share while America is forced to spend unthinkable amounts of money to make up for everyone
-        else. It’s ab-so-lute-ly unlawful.
+        else. It's ab-so-lute-ly unlawful.
         <animation id="Betty" animation="Betty_betty_angry" />
         Betty: Terrorists are killing our citizens left and right, so we should continue to waterboard against the
         terrorists if we want to find out where their colleagues are hiding. When they harm our families and friends,
@@ -26,6 +26,7 @@
 
         Betty: Russia has nukes. The US has nukes. We need to build even more nukes.
 
+        <animation id="Alice" animation="Alice_mc_sweat" />
         Alice: (Something doesn't seem right again! It was pretty cool when I pointed out she was wrong. Maybe
         she slipped up again? I should press for more information or present evidence that
         one of her plans would be unconstitutional.)
@@ -35,7 +36,7 @@
     <branch name="statement1">
         !Betty: The US does not have to police the world. It is shameful that other governments in NATO refuse to
         pay their fair share while America is forced to spend unthinkable amounts of money to make up for everyone
-        else. It’s ab-so-lute-ly unlawful.
+        else. It's ab-so-lute-ly unlawful.
         <choices>
             Press:
                 <changebranch branch="press1"/>
@@ -51,8 +52,8 @@
     </branch>
 
     <branch name="statement2">
-        !Betty: Terrorists are killing our citizens left and right, so we should continue to waterboard against the
-        terrorists if we want to find out where their colleagues are hiding. When they harm our families and friends,
+        !Betty: Terrorists are killing our citizens left and right, so we should continue to use the waterboard technique against
+        the terrorists if we want to find out where their colleagues are hiding. When they harm our families and friends,
         it only makes sense to return the favor.
         <choices>
             Press:
@@ -114,6 +115,7 @@
         nations?
         Betty: The American soldiers’ sole duty is to defend the citizens of the United States who pay their salaries
         and owe allegiance to the United States.
+        <animation id="Betty" animation="Betty_betty_smug" />
         Betty: Poorer nations should be thankful that we’ve stayed in NATO this long. Estonians, Latvians, Lithuanians,
         Croatians, and Albanians should learn to defend themselves,
         and when I’m president, they’ll have to!
@@ -123,7 +125,7 @@
     <branch name="press2">
         Alice: What do you mean by return the favor?
         Betty: Exactly what it sounds like, Alice.
-        Moderator: You don’t mean…
+        Moderator: You don't mean...
         <animation id="Betty" animation="Betty_betty_smug" />
         Betty: Oh, I do.
         <animation id="Alice" animation="Alice_mc_sweat" />
@@ -138,15 +140,15 @@
 
     <branch name="press3">
         <animation id="Moderator" animation="Wolf_Wolf_looking" />
-        Moderator: I’d love to go on an island vacation right now.
+        Moderator: I'd love to go on an island vacation right now.
         <animation id="Betty" animation="Betty_betty_smug" />
         Betty: Not in the South China Sea, you don’t.
         Moderator: Why’s that?
         <animation id="Alice" animation="Alice_mc_sweat" />
         Alice: That area is riddled with conflict, Mr. Blitzer. It’s incredibly unstable.
-        Moderator: Sigh, that’s disappointing.
-        <animation id="Betty" animation="Alice_mc_talk_normal" />
-        Betty: Don’t worry Wolf, after this debate we can take a my private jet to my beautiful private island on the
+        Moderator: Sigh, that's disappointing.
+        <animation id="Betty" animation="Betty_betty_talk" />
+        Betty: Don't worry Wolf, after this debate we can take a my private jet to my beautiful private island on the
         coast of Africa.
         Alice: (Private jet? Private island? I want those.)
         Alice: (Also when did Betty get so close to Mr. Blitzer?)
@@ -154,22 +156,28 @@
     </branch>
 
     <branch name="press4">
+        <animation id="Alice" animation="Alice_mc_sweat" />
         Alice: Wait, what does that mean!?
         Betty: You heard me right. This world needs more nukes.
-        Alice: That’s crazy!
-        Betty: Is it now? France, India and the UK have nukes and anything can happen.  I’ve met with the President
+        Alice: That's crazy!
+        <animation id="Betty" animation="Betty_betty_serious" />
+        Betty: Is it now? France, India and the UK have nukes and anything can happen.  I've met with the President
         about our nuclear arsenal.
         Alice: (What!? She has met with the President!?)
-        Alice (Though a crazy, it doesn’t sound illegal if the President was involved.)
+        Alice (Though a crazy, it doesn't sound illegal if the President was involved.)
         <changebranch branch="statement4"/>
     </branch>
 
     <branch name="wrong answer">
+        <animation id="Alice" animation="Alice_mc_smug" />
         Alice: Your plans are unconstitutional and I have proof!
+        <animation id="Betty" animation="Betty_betty_smug" />
         Betty: Do you?
         Moderator: Do you really?
+        <animation id="Alice" animation="Alice_mc_sweat" />
         Alice: Yep, read it and weep!
         Moderator: I don't see how that evidence proves anything.
+        <animation id="Alice" animation="Alice_mc_sweat" />
         Alice: (And now the only one weeping is me. But there's definitely something wrong...
         I just have to find the illegal or unconstitutional statement and present evidence that proves it!)
         <changebranch branch="statement1"/>
@@ -199,7 +207,7 @@
         <pausemusic/>
         Alice: (Damn! I was close but I think I got brownie points for pointing out her plan could have flaws)
         Moderator: On to the next topic, domestic policies!)
-        <changeconv conv="case3.conv"/>
+        <changeconv conv="domestic.conv"/>
     </branch>
 
 </conversation>
