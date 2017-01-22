@@ -1,0 +1,19 @@
+
+wolf2.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Wolf
+  rotate: false
+  xy: 1, 1
+  size: 256, 341
+  orig: 256, 341
+  offset: 0, 0
+  index: -1
+Wolf_looking
+  rotate: false
+  xy: 259, 1
+  size: 256, 341
+  orig: 256, 341
+  offset: 0, 0
+  index: -1

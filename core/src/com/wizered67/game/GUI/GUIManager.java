@@ -321,6 +321,11 @@ public class GUIManager {
         evidenceButton.setVisible(conversationController.isTextShowing() &&
                 conversationController.doneSpeaking() && !main.isVisible());
 	}
+
+	public static boolean viewingEvidence() {
+	    return main.isVisible();
+    }
+
     /** Resize all GUI elements when the screen is resized to dimensions
      * WIDTH by HEIGHT. Keeps GUI elements proportional to virtual size.
      */

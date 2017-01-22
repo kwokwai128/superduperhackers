@@ -3,6 +3,7 @@
         !Edgeworth Edgeworth.pack
         !Betty betty.pack
         !Alice alice.pack
+        !Wolf wolf.pack
     </animation_files>
 
     <animations>
@@ -23,6 +24,9 @@
         <animation id="Alice_mc_smug" frameDuration="1"/>
         <animation id="Alice_mc_sweat" frameDuration="1"/>
         <animation id="Alice_mc_talk_normal" frameDuration="1"/>
+
+        <animation id="Wolf_Wolf" frameDuration="1"/>
+        <animation id="Wolf_Wolf_looking" frameDuration="1"/>
     </animations>
 
     <backgrounds>

@@ -4,9 +4,12 @@
         <position id="Betty" x="-20" y="160"/>
         <visible id="Alice" visible="true" fade="1" wait="false"/>
         <position id="Alice" x="550" y="160"/>
+        <visible id="Moderator" visible="true" fade="1" wait="false"/>
+        <position id="Moderator" x="270" y="160"/>
         <changebranch branch="anims"/>
     </branch>
     <branch name="anims">
+        <animation id="Moderator" animation="Wolf_Wolf"/>
         <animation id="Betty" animation="Betty_betty_talk"/>
         <animation id="Alice" animation="Alice_mc_talk_normal"/>
         <delay time="2"/>
@@ -16,6 +19,7 @@
         <animation id="Alice" animation="Alice_mc_angry"/>
         <animation id="Betty" animation="Betty_betty_angry"/>
         <delay time="2"/>
+        <animation id="Moderator" animation="Wolf_Wolf_looking"/>
         <animation id="Betty" animation="Betty_betty_serious"/>
         <animation id="Alice" animation="Alice_mc_normal"/>
         <delay time="2"/>
@@ -24,6 +28,7 @@
         <delay time="2"/>
         Alice: Hello Christine!
         Betty: Die die die!
+        Moderator: Now now, settle down please.
         <changebranch branch="anims"/>
     </branch>
 </conversation>

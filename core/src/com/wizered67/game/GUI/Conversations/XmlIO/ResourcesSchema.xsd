@@ -7,12 +7,14 @@
 			<xs:enumeration value="Edgeworth"/>
 			<xs:enumeration value="Alice"/>
 			<xs:enumeration value="Betty"/>
+			<xs:enumeration value="Wolf"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="animationResource">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Alice_mc_angry"/>
 			<xs:enumeration value="Betty_betty_angry"/>
+			<xs:enumeration value="Wolf_Wolf"/>
 			<xs:enumeration value="Betty_betty_sweat"/>
 			<xs:enumeration value="Edgeworth_Accuse"/>
 			<xs:enumeration value="Edgeworth_Confront"/>
@@ -22,6 +24,7 @@
 			<xs:enumeration value="Alice_mc_talk_normal"/>
 			<xs:enumeration value="Edgeworth_Edgeworth"/>
 			<xs:enumeration value="Edgeworth_Static"/>
+			<xs:enumeration value="Wolf_Wolf_looking"/>
 			<xs:enumeration value="Betty_betty_smug"/>
 			<xs:enumeration value="Betty_betty_talk"/>
 			<xs:enumeration value="Edgeworth_Point"/>
@@ -62,6 +65,7 @@
 			<xs:enumeration value="Alice"/>
 			<xs:enumeration value="Betty"/>
 			<xs:enumeration value="talksoundfemale.wav"/>
+			<xs:enumeration value="Wolf"/>
 			<xs:enumeration value="testbackground.png"/>
 			<xs:enumeration value="intense.wav"/>
 			<xs:enumeration value="talksoundmale.wav"/>

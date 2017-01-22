@@ -472,7 +472,7 @@ public class ConversationController implements Controllable {
      * first. */
     @Override
     public void touchDown(int screenX, int screenY, int pointer, int button, boolean justPressed) {
-        if (justPressed) {
+        if (justPressed && !GUIManager.viewingEvidence()) {
             if (!doneSpeaking()) {
                 displayAll = true;
             }
