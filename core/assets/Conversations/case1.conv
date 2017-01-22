@@ -1,0 +1,114 @@
+<conversation xmlns="urn:conversations">
+    <branch name="default">
+
+        <assign>
+            anim <animation id="Alice" animation="Edgeworth_Edgeworth" wait="true"/>
+            think <animation id="Alice" animation="Edgeworth_Edgeworth" wait="true"/>
+            confront <animation id="Alice" animation="Edgeworth_Confront"/>
+            delay <delay time="1" skippable="true"/>
+        </assign>
+
+        <init language="Groovy">
+            correct 0
+        </init>
+
+        <changebranch branch="introduction"/>
+    </branch>
+
+    <branch name="introduction">
+
+        Alice: My name is Alice.
+
+        Distant: (Hello. Welcome to the first 2017 U.S. Presidential Debate! . . .)
+
+        Alice: I am exactly 35 years old. I am one of the youngest presidential candidates to make it this far.
+
+        Moderator: (. . . We’re happy to be here today with the two leading voices of our nation and hear their views on
+        various controversial topics. . .
+        : . . .Please welcome presidential candidates Betty ____ and Alice _____!) *cheering*
+
+
+        Alice: I’ve spent my entire life preparing for this moment. I’m a little nervous. @c{delay} I have a soft heart
+        but a loud voice, and that’s why I’m here today.
+
+
+
+        <position id="Alice" x="10" y="160"/>
+        <animation id="Alice" animation="Edgeworth_Static"/>
+        <visible id="Alice" visible="true" fade="0.5" wait="true"/>
+
+        <position id="Betty" x="800" y="160"/>
+        <animation id="Betty" animation="Edgeworth_Static"/>
+        <direction id="Betty" direction="-1"/>
+        <visible id="Betty" visible="true" fade="0.5" wait="true"/>
+
+        <bg id="testbackground.png"/>
+        <sound id="intense.wav"/>
+        <music id="crossexamination.mp3" loop="false"/>
+
+
+
+        <position id="Moderator" x="200" y="160"/>
+        <animation id="Moderator" animation="Edgeworth_Static"/>
+        <visible id="Moderator" visible="true" fade="0.5" wait="true"/>
+        Moderator: Thank you Senator Alice for your introduction.
+
+        <name id="Alice" displayname="Alice LastName"/>
+        Alice: Thank you, Mr. Wolf.
+        <visible id="Alice" visible="false" fade="0.5" wait="false"/>
+
+        Moderator: Mrs. Betty, you may begin your introduction.
+
+        <visible id="Moderator" visible="false" fade="0.5" wait="true"/>
+        <changebranch branch="bill"/>
+    </branch>
+
+    <branch name="bill">
+        <position id="Betty" x="800" y="160"/>
+        <animation id="Betty" animation="Edgeworth_Static"/>
+        <direction id="Betty" direction="-1"/>
+
+
+        Betty: Thank you Moderator Wolf.
+        : Good evening everyone. I am Betty (last name), your next US President!
+        : Americans are tired of having their voices ignored by the federal government.
+        : It is ab-so-lu-te-ly horrible and terrifying to see so many Americans being ignored and their voices
+        drowned in a sea of bureaucratic red tape.
+        : Americans should not own any guns as they are dangerous for children. So many kids are dying each day
+        from gun violence.
+        : Furthermore, oil companies should continue to drill away as it provides jobs, money and fuel to the
+        US economy.
+        : Let us make America again. Let us take back the federal government from the corrupt politicians of
+        Washington so we can make American beautiful again.
+
+        <changebranch branch="choices"/>
+    </branch>
+
+    <branch name="choices">
+        Alice: Wait...something doesn't sound right...
+        <choices>
+            "Sea of bureaucratic red tapes...":
+            <changebranch branch="options"/>
+            "Americans should not own any guns...":
+            <script language="Groovy"> correct += 1</script>
+            <changebranch branch="options"/>
+            "Companies should drill away...":
+            <changebranch branch="options"/>
+            "Corrupt politicians of Washington...":
+            <changebranch branch="options"/>
+        </choices>
+    </branch>
+
+    <branch name="options">
+        <choices>
+            Press:
+            <changebranch branch="moreInfo"/>
+            Evidence:
+            <changebranch branch="evidence"/>
+            Go back:
+            <changebranch branch="choices"/>
+        </choices>
+        <if language="Groovy"><![CDATA[ {work < 2} ]]></if>
+    </branch>
+
+</conversation>
