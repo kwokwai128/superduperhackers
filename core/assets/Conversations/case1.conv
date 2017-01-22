@@ -45,8 +45,7 @@
         Alice: Thank you, Mr. Wolf.
 
         Moderator: Ms. Betty, you may begin your introduction.
-
-        <changeconv conv="domestic.conv"/>
+        
 
         <music id="discussion" loop="true"/>
         <changebranch branch="bill"/>

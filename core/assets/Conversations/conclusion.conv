@@ -1,0 +1,102 @@
+<conversation xmlns="urn:conversations">
+    <branch name="default">
+        <music id="BettyTheme" loop="true"/>
+        <animation id="Alice" animation="Alice_mc_talk_normal"/>
+        Alice: There's something I've been meaning to ask you, Ms. Blue.
+        <animation id="Betty" animation="Betty_betty_smug"/>
+        Betty: Well I normally don't answer personal questions, but I suppose just this once.
+        Alice: It's not really a personal question. Rather... those papers you have.
+        <animation id="Betty" animation="Betty_betty_sweat"/>
+        Betty: Papers? What papers?
+        Alice: The ones on your podium. Every time I point out flaws in your plans you start looking through papers. Just where are they coming from?
+        Betty: I hardly think this is relevant, my dear.
+        <animation id="Alice" animation="Alice_mc_normal"/>
+        Alice: Wolf, please. Don't you think it's odd too?
+        <animation id="Moderator" animation="Wolf_Wolf_looking"/>
+        Moderator: Well, I...
+        <animation id="Moderator" animation="Wolf_Wolf"/>
+        Moderator: I don't know, maybe...
+        <animation id="Betty" animation="Betty_betty_angry"/>
+        Betty: Wolf, I'm warning you. Don't do this.
+        Moderator: I...
+        Betty: Do you really want to be an enemy of the future president?
+        Moderator: No, I suppose not, but...
+        Betty: The debate is over. End it now.
+        <animation id="Moderator" animation="Wolf_Wolf_looking"/>
+        Moderator: Very well, this debate is now...
+        <animation id="Alice" animation="Alice_mc_angry"/>
+        Alice: Just one moment!
+        Betty: What do you want now?
+        Alice: I say we search Ms. Blue's podium! Something suspicious is going on here!
+        <animation id="Betty" animation="Betty_betty_smug"/>
+        Betty: This is a presidential debate. It only makes sense that we would follow the Constitution even in our proceedings. Do you remember what the Constitution says about this?
+        : No unreasonable search and seizures!
+        Moderator: I guess that... kind of makes sense... I mean this is just a debate but still...
+        <animation id="Alice" animation="Alice_mc_smug"/>
+        Alice: Ms. Blue, do you know what your weakness is?
+        <animation id="Betty" animation="Betty_betty_angry"/>
+        Betty: Weakness...!
+        Alice: You don't really understand the Constitution. How can you possibly lead a country without understanding its government?
+        Betty: Why you...!
+        <changebranch branch="choose"/>
+    </branch>
+
+    <branch name="choose">
+        <animation id="Alice" animation="Alice_mc_talk_normal"/>
+        Alice: When you said no unreasonable search and seizures, you were of course referring to this amendment...
+        <evidence language="Groovy" variable="evidence"/>
+        <if language="Groovy">{evidence == 10}
+            <changebranch branch="next part"/>
+        </if>
+        <if language="Groovy">{evidence == -1}
+            <changebranch branch="choose"/>
+        </if>
+        Alice: (No, not that...)
+        <changebranch branch="choose"/>
+    </branch>
+
+    <branch name="next part">
+        Alice: You were referring to the Fourth Amendment! It states that there are to be no unreasonable search and seizures. But it isn't ironclad.
+        Moderator: Well, that's true in some cases. What do you mean though?
+        Alice: I mean that there's a crucial exception. If Ms. Blue intends to argue that we should honor the Constitution now, she must honor everything.
+        Betty: You...
+        <changebranch branch="evidence2"/>
+    </branch>
+
+    <branch name="evidence2">
+        Alice: This is why we should be able to search your podium!
+        <evidence language="Groovy" variable="evidence"/>
+        <if language="Groovy">{evidence == 11}
+            <changebranch branch="conclusion"/>
+        </if>
+        <if language="Groovy">{evidence == -1}
+            <changebranch branch="choose"/>
+        </if>
+        Alice: (No, not that...)
+        <changebranch branch="evidence2"/>
+    </branch>
+
+    <branch name="conclusion">
+        <music id="cornered" loop="true"/>
+        Alice: The Supreme Court ruled in United States v. Santana that if there is probable cause, then a search may be valid.
+        Specifically, they said that since Santana was standing on a porch he had no reasonable expectation of privacy.
+        Alice: I'd say those same conditions are met now. We've seen you holding suspicious papers with no clear origin. Seems like
+        probable cause to me. And expectation of privacy? You're on national TV in front of millions of viewers! How can you expect to
+        have privacy!
+        Moderator: That's true!
+        Alice: Wolf, search her podium, immediately!
+        Moderator: What... what is this! The podium is hollow! There's an elevator in here!
+        Alice: What!? An elevator?
+        Moderator: She's been getting papers sent up from under the stage by her debate preparation team!
+        <animation id="Betty" animation="Betty_betty_angry"/>
+        Betty: You're wrong... you're... no! This can't be happening! I was supposed to be president! ME! MEEEEEEE!
+        Alice: I'm sorry, Ms. Blue, but without an understanding of the Constitution, you don't deserve to be president.
+        Betty: Alice... Wonder. Alice Wonder. Aliiiiiiiice Wooooooooooooonder! This isn't the end! You haven't seen the last of me!
+        <visible id="Betty" visible="false" wait="true" fade="1"/>
+        <music id="victory" loop="true"/>
+        <animation id="Alice" animation="Alice_mc_smug"/>
+        Moderator: Well, I've never seen anything like this before in my career... I suppose, by default, the winner of this debate...
+        : ...is Alice Wonder! Congratulations!
+
+    </branch>
+</conversation>
