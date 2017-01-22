@@ -1,0 +1,40 @@
+
+betty.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+betty_angry
+  rotate: false
+  xy: 1, 344
+  size: 256, 341
+  orig: 256, 341
+  offset: 0, 0
+  index: -1
+betty_serious
+  rotate: false
+  xy: 1, 1
+  size: 256, 341
+  orig: 256, 341
+  offset: 0, 0
+  index: -1
+betty_smug
+  rotate: false
+  xy: 259, 344
+  size: 256, 341
+  orig: 256, 341
+  offset: 0, 0
+  index: -1
+betty_sweat
+  rotate: false
+  xy: 259, 1
+  size: 256, 341
+  orig: 256, 341
+  offset: 0, 0
+  index: -1
+betty_talk
+  rotate: false
+  xy: 517, 344
+  size: 256, 341
+  orig: 256, 341
+  offset: 0, 0
+  index: -1

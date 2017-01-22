@@ -127,6 +127,7 @@ public class MessageCommand implements ConversationCommand {
         if (c.type == CompleteEvent.Type.INPUT && conversationController.doneSpeaking()) {
             if (index >= storedText.size()) {
                 done = true;
+                conversationController.setTextBoxShowing(false);
             } else {
                 updateText();
                 conversationController.setDisplayAll(false);

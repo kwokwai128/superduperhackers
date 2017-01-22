@@ -96,7 +96,7 @@ public class ConversationController implements Controllable {
         initScriptManagers();
         if (!Constants.LOAD) { //todo fix
             //loadConversation("demonstration.conv");
-            loadConversation("case1.conv");
+            loadConversation("animationTest.conv");
             setBranch("default");
         }
         //remainingText =
@@ -353,6 +353,11 @@ public class ConversationController implements Controllable {
             currentCommand.complete(event);
         }
     }
+
+    public boolean isTextShowing() {
+        return textboxLabel.isVisible();
+    }
+
     /** Returns whether there is no more text to display. */
     public boolean doneSpeaking() {
         return remainingText.isEmpty();

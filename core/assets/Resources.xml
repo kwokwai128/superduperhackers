@@ -1,8 +1,8 @@
 <resources xmlns="urn:resourceXml" strict="true">
     <animation_files>
         !Edgeworth Edgeworth.pack
-        Test Test.pack
-        test4.png
+        !Betty betty.pack
+        !Alice alice.pack
     </animation_files>
 
     <animations>
@@ -11,75 +11,33 @@
         <animation id="Edgeworth_Confront" frameDuration="1"/>
         <animation id="Edgeworth_Edgeworth" frameDuration="0.3"/>
         <animation id="Edgeworth_Point" frameDuration="1"/>
+
+        <animation id="Betty_betty_angry" frameDuration="1"/>
+        <animation id="Betty_betty_serious" frameDuration="1"/>
+        <animation id="Betty_betty_smug" frameDuration="1"/>
+        <animation id="Betty_betty_sweat" frameDuration="1"/>
+        <animation id="Betty_betty_talk" frameDuration="1"/>
+
+        <animation id="Alice_mc_angry" frameDuration="1"/>
+        <animation id="Alice_mc_normal" frameDuration="1"/>
+        <animation id="Alice_mc_smug" frameDuration="1"/>
+        <animation id="Alice_mc_sweat" frameDuration="1"/>
+        <animation id="Alice_mc_talk_normal" frameDuration="1"/>
     </animations>
 
     <backgrounds>
         !testbackground.png
-        testbackground2.png
-        mountain test3.png
-        test4.png
-        test5.png
-        !mountain test6.png
-        test7.png
-        many1
-        many2
-        many3
-        many4
-        many5
-        many6
-        many7
-        many8
-        many9
-        many10
-        many20
-        many30
-        many40
-        many50
-        many60
-        many70
-        many80
-        many90
-        many100
-        many200
-        many300
-        many400
-        many500
-        many600
-        many700
-        many800
-        many900
-        many1000
-        many2000
-        many3000
-        many4000
-        many5000
-        many6000
-        many7000
-        many8000
-        many9000
-        many10000
-        many20000
-        many30000
-        many40000
-        many50000
-        many60000
-        many70000
-        many80000
-        many90000
+
     </backgrounds>
 
     <music>
-        !crossexamination.mp3
-        new music.mp3
-        !soundTest sound.mp3
+
     </music>
 
     <sounds>
         !intense.wav
         !talksoundfemale.wav
         !talksoundmale.wav
-        new sound for this file
-        test
         !cheering.wav
     </sounds>
 

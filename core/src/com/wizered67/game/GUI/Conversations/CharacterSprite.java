@@ -78,7 +78,7 @@ public class CharacterSprite {
         }
         sprite = new Sprite();
         sprite.setAlpha(0);
-        scale = new Vector2(2, 2);
+        scale = new Vector2(1, 1);
         //sprite.setScale(2, 2);
     }
     /** Stores variables to save important information. */

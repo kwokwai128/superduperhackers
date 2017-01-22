@@ -1,0 +1,29 @@
+<conversation xmlns="urn:conversations">
+    <branch name="default">
+        <visible id="Betty" visible="true" fade="1" wait="false"/>
+        <position id="Betty" x="-20" y="160"/>
+        <visible id="Alice" visible="true" fade="1" wait="false"/>
+        <position id="Alice" x="550" y="160"/>
+        <changebranch branch="anims"/>
+    </branch>
+    <branch name="anims">
+        <animation id="Betty" animation="Betty_betty_talk"/>
+        <animation id="Alice" animation="Alice_mc_talk_normal"/>
+        <delay time="2"/>
+        <animation id="Alice" animation="Alice_mc_sweat"/>
+        <animation id="Betty" animation="Betty_betty_sweat"/>
+        <delay time="2"/>
+        <animation id="Alice" animation="Alice_mc_angry"/>
+        <animation id="Betty" animation="Betty_betty_angry"/>
+        <delay time="2"/>
+        <animation id="Betty" animation="Betty_betty_serious"/>
+        <animation id="Alice" animation="Alice_mc_normal"/>
+        <delay time="2"/>
+        <animation id="Betty" animation="Betty_betty_smug"/>
+        <animation id="Alice" animation="Alice_mc_smug"/>
+        <delay time="2"/>
+        Alice: Hello Christine!
+        Betty: Die die die!
+        <changebranch branch="anims"/>
+    </branch>
+</conversation>

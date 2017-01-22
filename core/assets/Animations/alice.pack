@@ -1,0 +1,40 @@
+
+alice.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+mc_angry
+  rotate: false
+  xy: 1, 344
+  size: 256, 341
+  orig: 256, 341
+  offset: 0, 0
+  index: -1
+mc_normal
+  rotate: false
+  xy: 1, 1
+  size: 256, 341
+  orig: 256, 341
+  offset: 0, 0
+  index: -1
+mc_smug
+  rotate: false
+  xy: 259, 344
+  size: 256, 341
+  orig: 256, 341
+  offset: 0, 0
+  index: -1
+mc_sweat
+  rotate: false
+  xy: 259, 1
+  size: 256, 341
+  orig: 256, 341
+  offset: 0, 0
+  index: -1
+mc_talk_normal
+  rotate: false
+  xy: 517, 344
+  size: 256, 341
+  orig: 256, 341
+  offset: 0, 0
+  index: -1

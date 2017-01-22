@@ -318,6 +318,8 @@ public class GUIManager {
      */
 	public static void update(float deltaTime){
         conversationController.update(deltaTime);
+        evidenceButton.setVisible(conversationController.isTextShowing() &&
+                conversationController.doneSpeaking() && !main.isVisible());
 	}
     /** Resize all GUI elements when the screen is resized to dimensions
      * WIDTH by HEIGHT. Keeps GUI elements proportional to virtual size.
