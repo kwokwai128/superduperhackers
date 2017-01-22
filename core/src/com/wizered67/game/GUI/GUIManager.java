@@ -254,6 +254,7 @@ public class GUIManager {
         descriptionLabel.setY(545 - descriptionLabel.getHeight());
         descriptionLabel.invalidate();
         descriptionLabel.toBack();
+        descriptionLabel.setVisible(false);
         main.setVisible(false);
         column.setVisible(false);
         //main.row();
