@@ -401,6 +401,7 @@ public class ConversationController implements Controllable {
     public void setChoiceShowing(boolean show) {
         choiceShowing = show;
     }
+
     /** Sets choice number CHOICE to CHOICE NAME. */
     public void setChoice(int choice, String choiceName) {
         choiceButtons[choice].setVisible(!choiceName.isEmpty());

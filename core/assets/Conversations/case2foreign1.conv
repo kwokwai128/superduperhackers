@@ -113,15 +113,15 @@
 
     <branch name="press1">
         <animation id="Alice" animation="Alice_mc_talk_normal" />
-        Alice: America is the richest country in the entire world. Don’t you think we could spare a little for poorer
+        Alice: America is the richest country in the entire world. Don't you think we could spare a little for poorer
         nations?
         <animation id="Betty" animation="Betty_betty_talk" />
-        Betty: The American soldiers’ sole duty is to defend the citizens of the United States who pay their salaries
+        Betty: The American soldiers' sole duty is to defend the citizens of the United States who pay their salaries
         and owe allegiance to the United States.
         <animation id="Betty" animation="Betty_betty_smug" />
-        Betty: Poorer nations should be thankful that we’ve stayed in NATO this long. Estonians, Latvians, Lithuanians,
+        Betty: Poorer nations should be thankful that we've stayed in NATO this long. Estonians, Latvians, Lithuanians,
         Croatians, and Albanians should learn to defend themselves,
-        and when I’m president, they’ll have to!
+        and when I'm president, they'll have to!
         <changebranch branch="statement1"/>
     </branch>
 
@@ -135,11 +135,11 @@
         Betty: Oh, I do.
         <animation id="Alice" animation="Alice_mc_sweat" />
         Alice: (That's insane!)
-        Alice: You want to harm the terrorists’ families and friends?
+        Alice: You want to harm the terrorists' families and friends?
         <animation id="Betty" animation="Betty_betty_serious" />
         Betty: Of course. Terrorists and their families should be punished.
         <animation id="Alice" animation="Alice_mc_angry" />
-        Alice: (Is that even allowed!? Something doesn’t seem right)
+        Alice: (Is that even allowed!? Something doesn't seem right)
         <changebranch branch="statement2"/>
     </branch>
 
@@ -148,7 +148,7 @@
         <animation id="Moderator" animation="Wolf_Wolf_looking" />
         Moderator: I'd love to go on an island vacation right now.
         <animation id="Betty" animation="Betty_betty_smug" />
-        Betty: Not in the South China Sea, you don’t.
+        Betty: Not in the South China Sea, you don't.
         Moderator: Why's that?
         <animation id="Alice" animation="Alice_mc_sweat" />
         Alice: That area is riddled with conflict, Mr. Blitzer. It's incredibly unstable.
@@ -171,7 +171,7 @@
         Betty: Is it now? France, India and the UK have nukes and anything can happen.  I've met with the President
         about our nuclear arsenal.
         Alice: (What!? She has met with the President!?)
-        Alice (Though a crazy, it doesn't sound illegal if the President was involved.)
+        Alice: (Though a bit crazy, it doesn't sound illegal if the President was involved.)
         <changebranch branch="statement4"/>
     </branch>
 

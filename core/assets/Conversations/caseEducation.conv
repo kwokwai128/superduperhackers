@@ -16,6 +16,7 @@
     </branch>
 
     <branch name="bill">
+        <music id="discussion" loop="true"/>
         Betty: Thank you Moderator Wolf.
         : We continue to see African Americans, Hispanics, Asians and other minorities underrepresented in many
         universities. Universities should take drastic action to increase the enrollment numbers of minorities!
@@ -96,7 +97,7 @@
     <branch name="statement4">
 
         !Betty: Standardized testing is turning students into passive test-taking machines. It fails to incorporate multilevel
-        thinking and disregards students’ full potential.
+        thinking and disregards students' full potential.
         <choices>
             Press:
             <changebranch branch="press4"/>
@@ -118,10 +119,10 @@
         Alice: How so?
         <animation id="Betty" animation="Betty_betty_angry"/>
         Betty: Quotas! Obviously quotas so more minorities can get into universities.
-        Betty: The racial breakdown of many universities throughout the United States don’t represent the
+        Betty: The racial breakdown of many universities throughout the United States don't represent the
         American population.
 
-        !Alice: Wait...is there something strange about that?
+        !Alice: Wait... is there something strange about that?
         <choices>
             Evidence:
             <evidence language="Groovy" variable="evidence"/>
@@ -159,12 +160,12 @@
 
     <branch name="press3">
         <animation id="Alice" animation="Alice_mc_sweat"/>
-        Alice: Isn’t that a little unfair? Aren’t you discriminating kids over their grades? alice_sweat
+        Alice: Isn’t that a little unfair? Aren't you discriminating kids over their grades?
         Betty: Hardly. I see no problem in giving more resources to kids with more
         potential. I believe in psychology, this is called positive reinforcement.
-        Alice: But…
+        Alice: But...
         <animation id="Betty" animation="Betty_betty_talk"/>
-        Betty: (Cuts Alice off) I know all about what you are thinking, Ms.Wonder. betty_talk
+        Betty: I know all about what you are thinking, Ms. Wonder.
         Betty: I also want states to give schools with big enrollment of students larger
         amounts of funding. There should be a student population ratio to money to also
         determine how much funding each school receives.
@@ -186,11 +187,11 @@
         <animation id="Alice" animation="Alice_mc_smug"/>
         Alice: I agree! A system which repeatedly tries to measure students by a limited number of skill sets--
         <animation id="Betty" animation="Betty_betty_angry"/>
-        Betty: Don’t you dare try to steal the limelight! You don’t deserve it!
+        Betty: Don't you dare try to steal the limelight! You don’t deserve it!
         <animation id="Alice" animation="Alice_mc_sweat"/>
         Alice: Huh?!
         <animation id="Betty" animation="Betty_betty_serious"/>
-        Betty: Look, I’m going to be president anyways. It doesn’t matter what you say in the end. It’s MY words
+        Betty: Look, I’m going to be president anyways. It doesn't matter what you say in the end. It's MY words
         the audience needs to hear.
         Alice: (So much for a debate…)
 
@@ -212,9 +213,9 @@
         <music id="cornered" loop="true"/>
         <animation id="Alice" animation="Alice_mc_talk_normal"/>
         Alice: Ms. Blue, indeed there is not enough racial diversity in American universities...
-        Alice: But I must inform you that your idea violates @c{intense} a supreme court case!
-        Moderator: It… it does?!
-        Alice: Take a look at this, Regents of the University of California v. Bakke. upheld affirmation action,
+        Alice: But I must inform you that your idea violates @c{intense} a Supreme Court case!
+        Moderator: It... it does?!
+        Alice: Take a look at this! Regents of the University of California v. Bakke upheld affirmation action,
         allowing race to be one of the factors determining college admission.
         Alice: It ruled, however, a specific racial quotas are illegal!
         <animation id="Betty" animation="Betty_betty_sweat"/>
@@ -222,7 +223,7 @@
         Alice: This is a pretty well known court ruling. With years in the political scene, shouldn't you be familiar
         with these kind of knowledge?
         <animation id="Alice" animation="Alice_mc_normal"/>
-        Alice: (Ms. Blue looks distracted… is she flipping through papers again? This is getting more and more suspicious)
+        Alice: (Ms. Blue looks distracted... is she flipping through papers again? This is getting more and more suspicious.)
         <animation id="Moderator" animation="Wolf_Wolf_looking"/>
         Moderator: Ahem, thank you ladies for this insightful discussion.
         <pausemusic/>
